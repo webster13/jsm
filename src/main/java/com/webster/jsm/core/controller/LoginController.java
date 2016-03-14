@@ -25,7 +25,7 @@ public class LoginController  {
      */
     @RequestMapping( method = RequestMethod.GET)
     public String index() {
-        return "redirect:/login" ;
+        return "redirect:/admin" ;
     }
 
 

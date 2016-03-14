@@ -114,7 +114,15 @@
         <servlet-name>DruidStatView</servlet-name>
         <url-pattern>/druid/*</url-pattern>
     </servlet-mapping>
-
+    <!--
+    ********************************************************************************
+    *      静态页
+    ********************************************************************************
+    -->
+    <!--  step-07 Shiro-->
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/pages/login.jsp</welcome-file>
+    </welcome-file-list>
     <!--
     ********************************************************************************
     *      Web容器加载顺序

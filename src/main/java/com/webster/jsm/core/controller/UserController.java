@@ -12,35 +12,64 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Webster on 16/3/13.
  */
 @Controller
-@RequestMapping(value = "admin/user")
+@RequestMapping(value = "/")
 public class UserController extends BaseController {
 
 
     private final static Logger logger = LoggerFactory.getLogger(UserController.class);
 
+
+    /**
+     * 登录窗口
+     */
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login() {
         /*todo 判断用户已登录,则跳转首页*/
-        logger.debug("返回登陆页");
-        return "admin/user/login";
+        logger.debug("进入登陆页");
+        return "login";
     }
 
-    /*登录的实现由FormAuthenticationFilter提供*/
+
+    /**
+     * 登录检查
+     * 具体实现由Shiro的实现由FormAuthenticationFilter提供提供
+     */
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String loginPost() {
-        logger.debug("返回登陆页");
-        return "admin/user/login";
+    public String loginCheck() {
+        logger.debug("进行登陆检查");
+        return "login";
 
     }
 
-    /*登出的实现由Shiro提供*/
+    /**
+     * 登出
+     * 具体实现由Shiro提供
+     */
     @RequestMapping(value = "logout", method = RequestMethod.GET)
     public String logout() {
-        logger.debug("返回admin首页");
-        return "admin/admin";
+        logger.debug("进入登陆页");
+        return "login";
 
 
     }
 
+    /**
+     * 注册窗口
+     */
+    @RequestMapping(value = "register", method = RequestMethod.GET)
+    public String register() {
+        logger.debug("显示注册页");
+        return "user/register";
+    }
 
+
+    /**
+     * 注册检查
+     */
+    @RequestMapping(value = "register", method = RequestMethod.POST)
+    public String registerCheck() {
+        logger.debug("进行注册检查");
+        return "user/register";
+
+    }
 }

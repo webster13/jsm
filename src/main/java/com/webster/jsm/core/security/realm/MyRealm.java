@@ -9,6 +9,8 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
@@ -23,6 +25,7 @@ public class MyRealm extends AuthorizingRealm {
 
     @Resource
     UserServiceImpl userService;
+    private final static Logger logger = LoggerFactory.getLogger(MyRealm.class);
 
     /**
      * 回调函数,用于权限验证
@@ -49,13 +52,15 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String name = (String) token.getPrincipal();
+        logger.debug("登录验证.....");
+
         //查看当前用户是否存在
         Example example = new Example(User.class);
         example.createCriteria().andEqualTo("username", name);
         User user = userService.selectByExample(example).get(0);
 
         if (user == null) {
-            // 抛出 帐号找不到异常
+            logger.debug("登录失败: 帐号找不到");
             throw new UnknownAccountException();
         }
         // 交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配  

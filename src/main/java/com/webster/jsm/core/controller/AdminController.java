@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping(value = "admin")
-public class AdminController extends BaseController {
+public class AdminController  {
 
 
     private final static Logger logger = LoggerFactory.getLogger(AdminController.class);
@@ -22,7 +22,7 @@ public class AdminController extends BaseController {
     /**
      * 首页，直接进入admin管理首页
      */
-    @RequestMapping( value = "index",method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String index() {
         logger.debug("进入admin首页");
         return "admin/admin";

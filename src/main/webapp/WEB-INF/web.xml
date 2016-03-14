@@ -119,10 +119,10 @@
     *      静态页
     ********************************************************************************
     -->
-    <!--  step-07 Shiro-->
-    <welcome-file-list>
-        <welcome-file>/WEB-INF/pages/login.jsp</welcome-file>
-    </welcome-file-list>
+    <!--  首页-->
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>/WEB-INF/pages/login.jsp</welcome-file>-->
+    <!--</welcome-file-list>-->
     <!--
     ********************************************************************************
     *      Web容器加载顺序

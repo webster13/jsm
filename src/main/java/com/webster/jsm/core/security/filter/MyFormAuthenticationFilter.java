@@ -27,12 +27,11 @@ public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
 
         String className = e.getClass().getName(), message;
 
-        if (IncorrectCredentialsException.class.getName().equals(className)
-                || UnknownAccountException.class.getName().equals(className)){
-            message = "用户或密码错误, 请重试";
+        if (IncorrectCredentialsException.class.getName().equals(className)){
+            message = "用户或密码错误";
         }
-        else if(LockedAccountException.class.getName().equals(className)){
-            message = "账户已被锁定";
+        else if(UnknownAccountException.class.getName().equals(className)){
+            message = "帐号不存在";
         }
         else if(ExcessiveAttemptsException .class.getName().equals(className)){
             message = "错误次数过多,帐户锁定10分钟";

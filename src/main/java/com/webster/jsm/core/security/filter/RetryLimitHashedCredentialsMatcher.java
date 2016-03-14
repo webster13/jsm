@@ -16,7 +16,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 用于多次输错密码锁定登录的
  *
  * 通过EHCache配置的passwordRetryCache缓存，记录登录次数，见config/ehcache.xml
- * 超过5次抛出异常，之后通过FormAuthenticationFilter捕获异常，禁止登录
  * passwordRetryCache缓存配置的记录时间是10分钟，10分钟后缓存消失，可以登录
  */
 public class RetryLimitHashedCredentialsMatcher extends
@@ -33,6 +32,8 @@ public class RetryLimitHashedCredentialsMatcher extends
     @Override
     public boolean doCredentialsMatch(AuthenticationToken token,
                                       AuthenticationInfo info) {
+        logger.debug("============={}=============", "错误次数检查");
+
         String username = (String) token.getPrincipal();
         // retry count + 1
         AtomicInteger retryCount = passwordRetryCache.get(username);

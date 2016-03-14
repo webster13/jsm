@@ -1,8 +1,12 @@
 package com.webster.jsm.core.entity;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.Date;
 import javax.persistence.*;
 
+
+@Repository
 @Table(name = "shiro_user")
 public class User {
     @Id
@@ -52,6 +56,7 @@ public class User {
      */
     @Column(name = "is_deleted")
     private Boolean isDeleted;
+
 
     /**
      * @return id

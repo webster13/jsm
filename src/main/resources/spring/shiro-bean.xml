@@ -43,7 +43,7 @@
         <property name="storedCredentialsHexEncoded" value="true" />
     </bean>
 
-    <!-- 自定义一个Realm，指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java-->
+    <!-- 自定义一个Realm，指定Shiro验证用户登录的类为自定义的MyRealm.java-->
     <bean id="myRealm" class="com.webster.jsm.core.security.realm.MyRealm">
         <!--增加一个自定义验证,验证多次尝试密码-->
         <property name="credentialsMatcher" ref="retryLimitCredentialsMatcher"/>
@@ -51,8 +51,8 @@
 
     <!-- 根据Realm，创建实例securityManager-->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <property name="rememberMeManager" ref="rememberMeManager" />
         <property name="realm" ref="myRealm" />
+        <property name="rememberMeManager" ref="rememberMeManager" />
     </bean>
 
     <!-- web过滤器shiroFilter，id必须与web.xml中过滤器名字一样-->
@@ -77,11 +77,11 @@
             <value>
                 <!--/static/** = anon-->
                 <!--/userfiles/** = anon-->
+                <!--/error/** = anon-->
                 /login = authc
                 /logout = logout
-                /error/** = anon
-                ${sys.adminPath}/** = authc
-                <!--${sys.adminPath}/mybatis/** = authc-->
+                ${sys.adminPath}/user/** = authc
+                ${sys.adminPath}/** = user
             </value>
         </property>
     </bean>

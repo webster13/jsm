@@ -2,8 +2,6 @@ package com.webster.jsm.core.security.realm;
 
 import com.webster.jsm.core.entity.User;
 import com.webster.jsm.core.service.UserService;
-import com.webster.jsm.core.service.impl.UserServiceImpl;
-import jdk.nashorn.internal.ir.annotations.Reference;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -11,7 +9,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -24,7 +21,7 @@ import java.util.List;
 public class MyRealm extends AuthorizingRealm {
 
     @Resource
-    UserServiceImpl userService;
+    UserService userService;
     private final static Logger logger = LoggerFactory.getLogger(MyRealm.class);
 
     /**
@@ -54,13 +51,10 @@ public class MyRealm extends AuthorizingRealm {
         String name = (String) token.getPrincipal();
         logger.debug("登录验证.....");
 
-        //查看当前用户是否存在
-        Example example = new Example(User.class);
-        example.createCriteria().andEqualTo("username", name);
-        User user = userService.selectByExample(example).get(0);
+        User user = userService.selectByUsername(name);
 
         if (user == null) {
-            logger.debug("登录失败: 帐号找不到");
+            logger.debug("登录失败: 帐号不存在");
             throw new UnknownAccountException();
         }
         // 交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配  

@@ -14,6 +14,4 @@ import javax.annotation.Resource;
 public class UserUtils {
     @Resource
     public static UserService userService;
-
-
 }

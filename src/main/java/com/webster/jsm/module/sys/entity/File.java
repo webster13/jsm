@@ -1,31 +1,22 @@
-package com.webster.jsm.core.entity;
+package com.webster.jsm.module.sys.entity;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import javax.persistence.*;
-
+import java.util.Date;
 
 @Repository
-@Table(name = "shiro_user")
-public class User {
+@Table(name = "sys_file")
+public class File {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String username;
+    @Column(name = "file_name")
+    private String fileName;
 
-    private String password;
-
-    private String salt;
-
-    @Column(name = "real_name")
-    private String realName;
-
-    private Long deposit;
-
-    @Column(name = "org_id")
-    private Integer orgId;
+    @Column(name = "file_path")
+    private String filePath;
 
     /**
      * 创建者id
@@ -57,7 +48,6 @@ public class User {
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 
-
     /**
      * @return id
      */
@@ -73,87 +63,31 @@ public class User {
     }
 
     /**
-     * @return username
+     * @return file_name
      */
-    public String getUsername() {
-        return username;
+    public String getFileName() {
+        return fileName;
     }
 
     /**
-     * @param username
+     * @param fileName
      */
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setFileName(String fileName) {
+        this.fileName = fileName == null ? null : fileName.trim();
     }
 
     /**
-     * @return password
+     * @return file_path
      */
-    public String getPassword() {
-        return password;
+    public String getFilePath() {
+        return filePath;
     }
 
     /**
-     * @param password
+     * @param filePath
      */
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    /**
-     * @return salt
-     */
-    public String getSalt() {
-        return salt;
-    }
-
-    /**
-     * @param salt
-     */
-    public void setSalt(String salt) {
-        this.salt = salt == null ? null : salt.trim();
-    }
-
-    /**
-     * @return real_name
-     */
-    public String getRealName() {
-        return realName;
-    }
-
-    /**
-     * @param realName
-     */
-    public void setRealName(String realName) {
-        this.realName = realName == null ? null : realName.trim();
-    }
-
-    /**
-     * @return deposit
-     */
-    public Long getDeposit() {
-        return deposit;
-    }
-
-    /**
-     * @param deposit
-     */
-    public void setDeposit(Long deposit) {
-        this.deposit = deposit;
-    }
-
-    /**
-     * @return org_id
-     */
-    public Integer getOrgId() {
-        return orgId;
-    }
-
-    /**
-     * @param orgId
-     */
-    public void setOrgId(Integer orgId) {
-        this.orgId = orgId;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath == null ? null : filePath.trim();
     }
 
     /**

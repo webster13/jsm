@@ -1,7 +1,7 @@
-package com.webster.jsm.core.mapper;
+package com.webster.jsm.module.sys.mapper;
 
-import com.webster.jsm.core.entity.User;
 import com.webster.jsm.core.util.MyMapper;
+import com.webster.jsm.module.sys.entity.User;
 
 public interface UserMapper extends MyMapper<User> {
 }

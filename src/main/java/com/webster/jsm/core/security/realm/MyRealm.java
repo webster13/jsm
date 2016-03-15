@@ -1,7 +1,7 @@
 package com.webster.jsm.core.security.realm;
 
-import com.webster.jsm.core.entity.User;
-import com.webster.jsm.core.service.UserService;
+import com.webster.jsm.module.sys.entity.User;
+import com.webster.jsm.module.sys.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;

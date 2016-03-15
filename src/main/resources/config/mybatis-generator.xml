@@ -47,15 +47,83 @@
 
 
         <!--要生成mybatis文件的数据库表,可使用%表示所有的表-->
-        <table tableName="shiro_user" domainObjectName="User" >
+        <!--<table tableName="sys_user" domainObjectName="User" >-->
 
-            <!--表示所有的表都有一个id自增的主键，在生成实体类的时候会根据该配置生成相应的注解-->
+        <!--表示所有的表都有一个id自增的主键，在生成实体类的时候会根据该配置生成相应的注解-->
+        <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--忽略表中一个叫"fred"的列-->
+        <!--<ignoreColumn column="fred"/>-->
+        <!--对于列"BEG_DATA"列,生成的属性名是"startDate".-->
+        <!--<columnOverride column="BEG_DATE" property="startDate"/>-->
+        <!--</table>-->
+
+
+
+
+
+
+        <table tableName="sys_user" domainObjectName="User" >
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-            <!--忽略表中一个叫"fred"的列-->
-            <!--<ignoreColumn column="fred"/>-->
-            <!--对于列"BEG_DATA"列,生成的属性名是"startDate".-->
-            <!--<columnOverride column="BEG_DATE" property="startDate"/>-->
         </table>
-
+        <!--&lt;!&ndash;岗位&ndash;&gt;-->
+        <!--<table tableName="sys_position" domainObjectName="Position" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;机构&ndash;&gt;-->
+        <!--<table tableName="sys_org" domainObjectName="Org" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;用户组&ndash;&gt;-->
+        <!--<table tableName="sys_group" domainObjectName="Group" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;角色&ndash;&gt;-->
+        <!--<table tableName="sys_role" domainObjectName="Role" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;学生&ndash;&gt;-->
+        <!--<table tableName="sys_student" domainObjectName="Student" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;家长&ndash;&gt;-->
+        <!--<table tableName="sys_parent" domainObjectName="Parent" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;职员&ndash;&gt;-->
+        <!--<table tableName="sys_staff" domainObjectName="Staff" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;权限&ndash;&gt;-->
+        <!--<table tableName="sys_permission" domainObjectName="Permission" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;操作&ndash;&gt;-->
+        <!--<table tableName="sys_operate" domainObjectName="Operate" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;模块&ndash;&gt;-->
+        <!--<table tableName="sys_module" domainObjectName="Module" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;菜单&ndash;&gt;-->
+        <!--<table tableName="sys_menu" domainObjectName="Menu" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;页面元素&ndash;&gt;-->
+        <!--<table tableName="sys_element" domainObjectName="Element" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;文件&ndash;&gt;-->
+        <!--<table tableName="sys_file" domainObjectName="File" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;字典&ndash;&gt;-->
+        <!--<table tableName="sys_dictionary" domainObjectName="Dictionary" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--&lt;!&ndash;城市&ndash;&gt;-->
+        <!--<table tableName="sys_city" domainObjectName="City" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
     </context>
 </generatorConfiguration>

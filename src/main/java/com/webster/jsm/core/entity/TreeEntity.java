@@ -6,6 +6,9 @@ import javax.persistence.Column;
 
 /**
  * 树形结构的基类
+ *  包含" id , createBy , createAt , updateBy , updateAt , isDeleted "字段
+ *  包含" name , description , parent , parentIds , sequence "字段
+ *
  * Created by Vince on 2016/3/15.
  */
 

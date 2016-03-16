@@ -10,12 +10,13 @@
 <generatorConfiguration>
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
-         <!--s02-p1 解决乱码-->
+        <!--s02-p1 解决乱码-->
         <property name="javaFileEncoding" value="UTF-8"/>
 
         <!-- s02-p1 通用mapper使用的generator 详见http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/7.UseMBG.md-->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
+            <property name="mappers" value="com.webster.jsm.core.util.MyMapper"/>
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="true"/>
         </plugin>
@@ -36,94 +37,91 @@
         <!--生成实体类 指定包名 以及生成的地址 （targetProject自定义地址，但是路径不存在不会自动创建) -->
         <javaModelGenerator targetPackage="${javaModelPackage}" targetProject="${srcMainJava}">
             <!--去掉空格-->
-            <property name="trimStrings" value="true" />
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--生成SQL-MAP文件 -->
-        <sqlMapGenerator targetPackage="${sqlMapPackage}"  targetProject="${srcMainResources}"/>
+        <sqlMapGenerator targetPackage="${sqlMapPackage}" targetProject="${srcMainResources}"/>
 
         <!--生成dao文件-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="${javaClientPackage}" targetProject="${srcMainJava}"/>
 
 
-        <!--要生成mybatis文件的数据库表,可使用%表示所有的表-->
-        <!--<table tableName="sys_user" domainObjectName="User" >-->
+        <!--&lt;!&ndash;要生成mybatis文件的数据库表,可使用%表示所有的表&ndash;&gt;-->
+        <!--<table tableName="%" >-->
+            <!--&lt;!&ndash;表示所有的表都有一个id自增的主键，在生成实体类的时候会根据该配置生成相应的注解&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
 
-        <!--表示所有的表都有一个id自增的主键，在生成实体类的时候会根据该配置生成相应的注解-->
-        <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--忽略表中一个叫"fred"的列-->
-        <!--<ignoreColumn column="fred"/>-->
-        <!--对于列"BEG_DATA"列,生成的属性名是"startDate".-->
-        <!--<columnOverride column="BEG_DATE" property="startDate"/>-->
+            <!--<columnRenamingRule searchString="^sys_" replaceString=""/>-->
+            <!--&lt;!&ndash;忽略表中一个叫"fred"的列&ndash;&gt;-->
+            <!--<ignoreColumn column="fred"/>-->
+            <!--&lt;!&ndash;对于列"BEG_DATA"列,生成的属性名是"startDate".&ndash;&gt;-->
+            <!--<columnOverride column="BEG_DATE" property="startDate"/>-->
         <!--</table>-->
-
-
-
-
 
 
         <table tableName="sys_user" domainObjectName="User" >
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
-        <!--&lt;!&ndash;岗位&ndash;&gt;-->
-        <!--<table tableName="sys_position" domainObjectName="Position" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;机构&ndash;&gt;-->
-        <!--<table tableName="sys_org" domainObjectName="Org" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;用户组&ndash;&gt;-->
-        <!--<table tableName="sys_group" domainObjectName="Group" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;角色&ndash;&gt;-->
-        <!--<table tableName="sys_role" domainObjectName="Role" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;学生&ndash;&gt;-->
-        <!--<table tableName="sys_student" domainObjectName="Student" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;家长&ndash;&gt;-->
-        <!--<table tableName="sys_parent" domainObjectName="Parent" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;职员&ndash;&gt;-->
-        <!--<table tableName="sys_staff" domainObjectName="Staff" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;权限&ndash;&gt;-->
-        <!--<table tableName="sys_permission" domainObjectName="Permission" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;操作&ndash;&gt;-->
-        <!--<table tableName="sys_operate" domainObjectName="Operate" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;模块&ndash;&gt;-->
-        <!--<table tableName="sys_module" domainObjectName="Module" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;菜单&ndash;&gt;-->
-        <!--<table tableName="sys_menu" domainObjectName="Menu" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;页面元素&ndash;&gt;-->
-        <!--<table tableName="sys_element" domainObjectName="Element" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;文件&ndash;&gt;-->
-        <!--<table tableName="sys_file" domainObjectName="File" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;字典&ndash;&gt;-->
-        <!--<table tableName="sys_dictionary" domainObjectName="Dictionary" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
-        <!--&lt;!&ndash;城市&ndash;&gt;-->
-        <!--<table tableName="sys_city" domainObjectName="City" >-->
-            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
-        <!--</table>-->
+        <!--岗位-->
+        <table tableName="sys_position" domainObjectName="Position" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--机构-->
+        <table tableName="sys_org" domainObjectName="Org" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--用户组-->
+        <table tableName="sys_group" domainObjectName="Group" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--角色-->
+        <table tableName="sys_role" domainObjectName="Role" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--学生-->
+        <table tableName="sys_student" domainObjectName="Student" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--家长-->
+        <table tableName="sys_parent" domainObjectName="Parent" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--职员-->
+        <table tableName="sys_staff" domainObjectName="Staff" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--权限-->
+        <table tableName="sys_permission" domainObjectName="Permission" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--操作-->
+        <table tableName="sys_operate" domainObjectName="Operate" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--模块-->
+        <table tableName="sys_module" domainObjectName="Module" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--菜单-->
+        <table tableName="sys_menu" domainObjectName="Menu" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--页面元素-->
+        <table tableName="sys_element" domainObjectName="Element" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--文件-->
+        <table tableName="sys_file" domainObjectName="File" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--字典-->
+        <table tableName="sys_dictionary" domainObjectName="Dictionary" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--城市-->
+        <table tableName="sys_city" domainObjectName="City" >
+        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
     </context>
 </generatorConfiguration>

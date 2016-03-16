@@ -1,7 +1,8 @@
 package com.webster.jsm.module.sys.service.impl;
 
-import com.webster.jsm.core.entity.User;
-import com.webster.jsm.core.mapper.UserMapper;
+import com.webster.jsm.core.service.impl.BaseServiceImpl;
+import com.webster.jsm.module.sys.entity.User;
+import com.webster.jsm.module.sys.mapper.UserMapper;
 import com.webster.jsm.module.sys.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

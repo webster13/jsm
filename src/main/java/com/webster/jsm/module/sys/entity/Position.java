@@ -8,12 +8,10 @@ import java.util.Date;
 @Repository
 @Table(name = "sys_position")
 public class Position {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
 
     @Column(name = "org_id")
-    private Integer orgId;
+    private Org orgId;
 
     /**
      * 唯一，最多100个字节＝33个汉字
@@ -25,187 +23,27 @@ public class Position {
      */
     private String description;
 
-    /**
-     * 创建者id
-     */
-    @Column(name = "create_by")
-    private Integer createBy;
-
-    /**
-     * 创建时间
-     */
-    @Column(name = "create_at")
-    private Date createAt;
-
-    /**
-     * 更新者id
-     */
-    @Column(name = "update_by")
-    private Integer updateBy;
-
-    /**
-     * 更新时间
-     */
-    @Column(name = "update_at")
-    private Date updateAt;
-
-    /**
-     * 被删除标记
-     */
-    @Column(name = "is_deleted")
-    private Boolean isDeleted;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * @return org_id
-     */
-    public Integer getOrgId() {
+    public Org getOrgId() {
         return orgId;
     }
 
-    /**
-     * @param orgId
-     */
-    public void setOrgId(Integer orgId) {
+    public void setOrgId(Org orgId) {
         this.orgId = orgId;
     }
 
-    /**
-     * 获取唯一，最多100个字节＝33个汉字
-     *
-     * @return name - 唯一，最多100个字节＝33个汉字
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * 设置唯一，最多100个字节＝33个汉字
-     *
-     * @param name 唯一，最多100个字节＝33个汉字
-     */
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
-    /**
-     * 获取最多255个字节
-     *
-     * @return description - 最多255个字节
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * 设置最多255个字节
-     *
-     * @param description 最多255个字节
-     */
     public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
-    }
-
-    /**
-     * 获取创建者id
-     *
-     * @return create_by - 创建者id
-     */
-    public Integer getCreateBy() {
-        return createBy;
-    }
-
-    /**
-     * 设置创建者id
-     *
-     * @param createBy 创建者id
-     */
-    public void setCreateBy(Integer createBy) {
-        this.createBy = createBy;
-    }
-
-    /**
-     * 获取创建时间
-     *
-     * @return create_at - 创建时间
-     */
-    public Date getCreateAt() {
-        return createAt;
-    }
-
-    /**
-     * 设置创建时间
-     *
-     * @param createAt 创建时间
-     */
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
-    }
-
-    /**
-     * 获取更新者id
-     *
-     * @return update_by - 更新者id
-     */
-    public Integer getUpdateBy() {
-        return updateBy;
-    }
-
-    /**
-     * 设置更新者id
-     *
-     * @param updateBy 更新者id
-     */
-    public void setUpdateBy(Integer updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    /**
-     * 获取更新时间
-     *
-     * @return update_at - 更新时间
-     */
-    public Date getUpdateAt() {
-        return updateAt;
-    }
-
-    /**
-     * 设置更新时间
-     *
-     * @param updateAt 更新时间
-     */
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    /**
-     * 获取被删除标记
-     *
-     * @return is_deleted - 被删除标记
-     */
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    /**
-     * 设置被删除标记
-     *
-     * @param isDeleted 被删除标记
-     */
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
+        this.description = description;
     }
 }

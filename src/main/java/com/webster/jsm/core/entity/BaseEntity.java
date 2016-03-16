@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 实体类的基类
+ * 实体类的基类,含有" id , createBy , createAt , updateBy , updateAt , isDeleted "字段
  * Created by Webster on 16/3/13.
  */
 public abstract class BaseEntity implements Serializable {

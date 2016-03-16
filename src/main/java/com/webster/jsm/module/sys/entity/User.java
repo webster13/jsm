@@ -56,4 +56,15 @@ public class User extends BaseEntity{
     public void setUserType(UserType userType) {
         this.userType = userType;
     }
+
+    @Override
+    public String toString() {
+
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", userType=" + userType +
+                '}';
+    }
 }

@@ -83,8 +83,6 @@ dependencies {
     |--------------------------------------------------------------------------
     */
     //s02-p1 mybatis文件生成器,根据数据库表生成实体类和xml的Dao文件.
-    compile 'org.mybatis.generator:mybatis-generator-core:1.3.2'
-    compile 'tk.mybatis:mapper:3.3.1'
     mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.2'
     mybatisGenerator 'mysql:mysql-connector-java:5.1.36'
     mybatisGenerator 'tk.mybatis:mapper:3.3.1'
@@ -166,7 +164,7 @@ task mbg << {
     //运行ant任务，生成mybatis文件
     ant.mbgenerator(
             //引入配置文件，
-            verbose: true, configfile: 'src/main/resources/config/mybatis-generator.xml', overwrite: true,) {
+            verbose: true, configfile: 'src/main/resources/config/mybatis-generator.xml', overwrite: false,) {
         //将以下变量引入到配置文件中
         propertyset {
             propertyref(name: 'targetProject')

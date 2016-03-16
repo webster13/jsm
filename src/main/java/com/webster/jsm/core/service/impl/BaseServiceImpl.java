@@ -4,6 +4,8 @@ import com.webster.jsm.core.service.BaseService;
 import com.webster.jsm.core.util.MyMapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Autowired;
+import tk.mybatis.mapper.common.Mapper;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,8 +17,7 @@ import java.util.List;
 public class BaseServiceImpl<SpecificMapper extends MyMapper<M>,M>
         implements BaseService<SpecificMapper, M> {
 
-
-    @Resource
+    @Autowired
     SpecificMapper mapper;
 
 

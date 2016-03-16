@@ -42,7 +42,6 @@ public abstract class TreeEntity extends BaseEntity {
     private Integer sequence;
 
 
-
     public String getName() {
         return name;
     }
@@ -82,5 +81,16 @@ public abstract class TreeEntity extends BaseEntity {
 
     public void setParent(Menu parent) {
         this.parent = parent;
+    }
+
+    @Override
+    public String toString() {
+        return "TreeEntity{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", parent=" + parent +
+                ", parentIds='" + parentIds + '\'' +
+                ", sequence=" + sequence +
+                '}';
     }
 }

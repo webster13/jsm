@@ -8,12 +8,20 @@
 ********************************************************************************
 -->
 <configuration>
+
     <settings>
-        <!--  使用驼峰命名法转换字段。default:false -->
-        <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!--  设置插入空值时不需要指定类型 ,default:OTHER，-->
         <setting name="jdbcTypeForNull" value="NULL"/>
+        <!--  使用驼峰命名法转换字段。default:false -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
     </settings>
+
+    <typeHandlers>
+        <!-- 由于自定义的TypeHandler在定义时已经通过注解指定了jdbcType, 所以此处不用再配置jdbcType -->
+        <typeHandler handler="com.webster.jsm.core.util.UserTypeHandler"/>
+        <typeHandler handler="com.webster.jsm.core.util.MenuTypeHandler"/>
+    </typeHandlers>
 
     <!-- 分页插件pagehelper-->
     <plugins>
@@ -51,3 +59,4 @@
         </plugin>
     </plugins>
 </configuration>
+

@@ -17,9 +17,21 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
     @Autowired
     User user;
 
+    @Autowired
+    UserMapper userMapper;
+
     @Override
     public User selectByUsername(String username) {
         user.setUsername(username);
-        return selectOne(user);
+        user = selectOne(user);
+        return user;
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        return userMapper.findByUsername(username);
+    }
+    public User findById(Integer id) {
+        return userMapper.findById(id);
     }
 }

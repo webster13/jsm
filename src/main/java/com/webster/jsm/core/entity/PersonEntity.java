@@ -104,5 +104,19 @@ public abstract class PersonEntity extends BaseEntity{
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "PersonEntity{" +
+                "user=" + user +
+                ", realName='" + realName + '\'' +
+                ", pinyinName='" + pinyinName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", phone2='" + phone2 + '\'' +
+                ", gender=" + gender +
+                ", city=" + city +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
 

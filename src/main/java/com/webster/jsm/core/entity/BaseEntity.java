@@ -104,5 +104,15 @@ public abstract class BaseEntity implements Serializable {
         this.isDeleted = isDeleted;
     }
 
-
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "id=" + id +
+                ", createBy=" + createBy +
+                ", createAt=" + createAt +
+                ", updateBy=" + updateBy +
+                ", updateAt=" + updateAt +
+                ", isDeleted=" + isDeleted +
+                '}';
+    }
 }

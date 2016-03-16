@@ -60,9 +60,9 @@
         <!--</table>-->
 
 
-        <table tableName="sys_user" domainObjectName="User" >
-        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
+        <!--<table tableName="sys_user" domainObjectName="User" >-->
+        <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
         <!--岗位-->
         <table tableName="sys_position" domainObjectName="Position" >
         <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
@@ -103,10 +103,10 @@
         <table tableName="sys_module" domainObjectName="Module" >
         <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
-        <!--菜单-->
-        <table tableName="sys_menu" domainObjectName="Menu" >
-        <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
+        <!--&lt;!&ndash;菜单&ndash;&gt;-->
+        <!--<table tableName="sys_menu" domainObjectName="Menu" >-->
+        <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
         <!--页面元素-->
         <table tableName="sys_element" domainObjectName="Element" >
         <generatedKey column="id" sqlStatement="Mysql" identity="true"/>

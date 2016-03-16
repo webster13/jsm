@@ -16,5 +16,6 @@
     <result column="update_by" property="updateBy" jdbcType="INTEGER" />
     <result column="update_at" property="updateAt" jdbcType="TIMESTAMP" />
     <result column="is_deleted" property="isDeleted" jdbcType="BIT" />
+
   </resultMap>
 </mapper>

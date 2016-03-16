@@ -2,6 +2,7 @@ package com.webster.jsm.module.sys.entity;
 
 import com.webster.jsm.core.entity.BaseEntity;
 import com.webster.jsm.core.enumeration.UserType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
@@ -57,14 +58,15 @@ public class User extends BaseEntity{
         this.userType = userType;
     }
 
+
     @Override
     public String toString() {
-
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", userType=" + userType +
-                '}';
+        return new ToStringBuilder(this)
+                .append("username", username)
+                .append("password", password)
+                .append("salt", salt)
+                .append("userType", userType)
+                .append("upDateAt", getUpdateAt())
+                .toString();
     }
 }

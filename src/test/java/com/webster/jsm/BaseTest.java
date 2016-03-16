@@ -14,7 +14,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
 public class BaseTest {
-    public static Logger looger = LoggerFactory.getLogger(BaseTest.class);
+    public static Logger logger = LoggerFactory.getLogger(BaseTest.class);
+
+
 
 }
 

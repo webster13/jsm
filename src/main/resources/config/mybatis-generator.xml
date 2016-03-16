@@ -10,13 +10,15 @@
 <generatorConfiguration>
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
-        <!--s02-p1 解决乱码-->
+        <!--解决乱码-->
         <property name="javaFileEncoding" value="UTF-8"/>
 
-        <!-- s02-p1 通用mapper使用的generator 详见http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/7.UseMBG.md-->
+        <!--通用mapper使用的generator 详见http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/7.UseMBG.md-->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
+            <!--使用自定义的MyMapper-->
             <property name="mappers" value="com.webster.jsm.core.util.MyMapper"/>
+            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
+
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="true"/>
         </plugin>

@@ -20,19 +20,17 @@
                 typeHandler="com.webster.jsm.core.util.UserTypeHandler"  />
 
 
-        <result column="parent" jdbcType="INTEGER" property="parent"
-                javaType="com.webster.jsm.module.sys.entity.Menu"
-                typeHandler="com.webster.jsm.core.util.MenuTypeHandler" />
-
     </resultMap>
 
 
-    <select id="findByUsername" parameterType="String" resultType="com.webster.jsm.module.sys.entity.User">
+    <!--<select id="findByUsername" parameterType="String" resultType="com.webster.jsm.module.sys.entity.User">-->
+    <select id="findByUsername" parameterType="String" resultMap="BaseResultMap" >
         SELECT * FROM sys_user WHERE sys_user.username = #{username}
     </select>
 
-    <select id="findById" parameterType="Integer" resultType="com.webster.jsm.module.sys.entity.User">
-        SELECT * FROM sys_user WHERE sys_user.id = #{id}
+    <!--<select id="findById" parameterType="Integer" resultType="com.webster.jsm.module.sys.entity.User">-->
+    <select id="findById" parameterType="Integer" resultMap="BaseResultMap">
+        SELECT * FROM sys_user WHERE id = #{id}
     </select>
 
 </mapper>

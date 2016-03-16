@@ -32,6 +32,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
         return userMapper.findByUsername(username);
     }
     public User findById(Integer id) {
-        return userMapper.findById(id);
+        user =userMapper.findById(id);
+        return user;
     }
 }

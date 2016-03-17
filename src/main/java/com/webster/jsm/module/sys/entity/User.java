@@ -18,6 +18,16 @@ public class User extends BaseEntity{
 
     private String salt;
 
+    public User() {
+    }
+
+    public User(String username, String password, String salt, UserType userType) {
+        this.username = username;
+        this.password = password;
+        this.salt = salt;
+        this.userType = userType;
+    }
+
     /**
      * staff=员工,
         student=学生,
@@ -58,15 +68,13 @@ public class User extends BaseEntity{
         this.userType = userType;
     }
 
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("username", username)
-                .append("password", password)
-                .append("salt", salt)
-                .append("userType", userType)
-                .append("upDateAt", getUpdateAt())
-                .toString();
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", userType=" + userType +
+                '}';
     }
 }

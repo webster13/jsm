@@ -21,11 +21,11 @@ public abstract class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    /**
-     * 创建者id
-     */
-    @Column(name = "create_by")
-    private User createBy;
+//    /**
+//     * 创建者id
+//     */
+//    @Column(name = "create_by")
+//    private User createBy;
 
     /**
      * 创建时间
@@ -33,11 +33,11 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "create_at")
     private Date createAt;
 
-    /**
-     * 更新者id
-     */
-    @Column(name = "update_by")
-    private User updateBy;
+//    /**
+//     * 更新者id
+//     */
+//    @Column(name = "update_by")
+//    private User updateBy;
 
     /**
      * 更新时间
@@ -64,13 +64,13 @@ public abstract class BaseEntity implements Serializable {
         this.id = id;
     }
 
-    public User getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(User createBy) {
-        this.createBy = createBy;
-    }
+//    public User getCreateBy() {
+//        return createBy;
+//    }
+//
+//    public void setCreateBy(User createBy) {
+//        this.createBy = createBy;
+//    }
 
     public Date getCreateAt() {
         return createAt;
@@ -80,13 +80,13 @@ public abstract class BaseEntity implements Serializable {
         this.createAt = createAt;
     }
 
-    public User getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(User updateBy) {
-        this.updateBy = updateBy;
-    }
+//    public User getUpdateBy() {
+//        return updateBy;
+//    }
+//
+//    public void setUpdateBy(User updateBy) {
+//        this.updateBy = updateBy;
+//    }
 
     public Date getUpdateAt() {
         return updateAt;
@@ -104,15 +104,5 @@ public abstract class BaseEntity implements Serializable {
         this.isDeleted = isDeleted;
     }
 
-    @Override
-    public String toString() {
-        return "BaseEntity{" +
-                "id=" + id +
-                ", createBy=" + createBy +
-                ", createAt=" + createAt +
-                ", updateBy=" + updateBy +
-                ", updateAt=" + updateAt +
-                ", isDeleted=" + isDeleted +
-                '}';
-    }
+
 }

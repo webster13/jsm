@@ -6,8 +6,6 @@ import com.webster.jsm.module.sys.service.impl.UserServiceImpl;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -20,35 +18,32 @@ import java.sql.SQLException;
  */
 public class UserTypeHandler extends BaseTypeHandler<User> {
 
-
     UserService userService = new UserServiceImpl();
-
-    User user = new User();
 
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, User parameter, JdbcType jdbcType) throws SQLException {
-        ps.setObject(i, parameter);
+
+        ps.setObject(i,parameter.getId());
     }
 
     @Override
     public User getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int id = rs.getInt(columnName);
-//        user=userService.selectByPrimaryKey(id);
-
-        user=userService.findById(id);
-
-        return user;
+        Integer id = rs.getInt(columnName);
+        return userService.findById(id);
     }
 
     @Override
     public User getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int id = rs.getInt(columnIndex);
-        return userService.selectByPrimaryKey(id);
+        Integer id = rs.getInt(columnIndex);
+        return userService.findById(id);
     }
 
     @Override
     public User getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int id = cs.getInt(columnIndex);
-        return userService.selectByPrimaryKey(id);
+        Integer id = cs.getInt(columnIndex);
+        return userService.findById(id);
     }
+
+
+
 }

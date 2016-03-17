@@ -19,7 +19,8 @@
 
     <typeHandlers>
         <!-- 由于自定义的TypeHandler在定义时已经通过注解指定了jdbcType, 所以此处不用再配置jdbcType -->
-        <typeHandler handler="com.webster.jsm.core.util.UserTypeHandler"/>
+        <!--<typeHandler handler="com.webster.jsm.core.util.UserTypeHandler"/>-->
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="java.math.RoundingMode"/>
     </typeHandlers>
 
     <!-- 分页插件pagehelper-->

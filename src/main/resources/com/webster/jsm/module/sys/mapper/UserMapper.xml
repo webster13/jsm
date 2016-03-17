@@ -2,35 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.webster.jsm.module.sys.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.webster.jsm.module.sys.entity.User">
-        <!--
-          WARNING - @mbggenerated
-        -->
-        <id column="id" property="id" jdbcType="INTEGER"/>
 
+        <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="salt" jdbcType="VARCHAR" property="salt"/>
-        <result column="user_type" jdbcType="CHAR" property="userType"/>
+        <result column="user_type" property="userType" jdbcType="VARCHAR" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
         <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
         <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
         <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
-
-        <result column="create_by" jdbcType="INTEGER" property="createBy"
-                javaType="com.webster.jsm.module.sys.entity.User"
-                typeHandler="com.webster.jsm.core.util.UserTypeHandler"  />
-
-
     </resultMap>
 
-
-    <!--<select id="findByUsername" parameterType="String" resultType="com.webster.jsm.module.sys.entity.User">-->
-    <select id="findByUsername" parameterType="String" resultMap="BaseResultMap" >
-        SELECT * FROM sys_user WHERE sys_user.username = #{username}
+   <select id="findById" parameterType="Integer" resultMap="BaseResultMap">
+        SELECT id,username
+        FROM sys_user WHERE sys_user.id = #{id}
     </select>
 
-    <!--<select id="findById" parameterType="Integer" resultType="com.webster.jsm.module.sys.entity.User">-->
-    <select id="findById" parameterType="Integer" resultMap="BaseResultMap">
-        SELECT * FROM sys_user WHERE id = #{id}
-    </select>
+
 
 </mapper>

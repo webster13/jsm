@@ -2,21 +2,20 @@ package com.webster.jsm.module.sys.service;
 
 
 import com.webster.jsm.core.service.BaseService;
+import com.webster.jsm.module.sys.entity.Staff;
 import com.webster.jsm.module.sys.entity.User;
+import com.webster.jsm.module.sys.mapper.StaffMapper;
 import com.webster.jsm.module.sys.mapper.UserMapper;
 
 /**
  * todo
  * Created by Webster on 16/3/13.
  */
-public interface UserService extends BaseService<UserMapper,User> {
+public interface StaffService extends BaseService<StaffMapper,Staff> {
 
-    User selectByUsername(String username);
+    Staff findById(Integer id);
 
-    User findByUsername(String username);
-    User findById(Integer id);
 
-    User findUserNameById(Integer id);
 
 
 }

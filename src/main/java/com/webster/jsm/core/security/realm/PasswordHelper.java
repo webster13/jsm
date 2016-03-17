@@ -46,8 +46,8 @@ public class PasswordHelper {
     /*这是上面代码的简化不规范模式,规范用法是Test文件里的*/
     public static void main(String[] args) {
         String algorithmName = "md5";
-        String username = "linda";
-        String password = "111111";
+        String username = "webster";
+        String password = "cccc41";
         String salt = new SecureRandomNumberGenerator().nextBytes().toHex();
         int hashIterations = 3;
         SimpleHash hash = new SimpleHash(algorithmName, password,

@@ -3,11 +3,21 @@ package com.webster.jsm.module.sys.entity;
 import com.webster.jsm.core.entity.TreeEntity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.util.Date;
+
 /**
  * 用户群组
  * Created by Webster on 2016/3/18.
  */
 public class Group extends TreeEntity<Group> {
+
+
+    public Group() {
+    }
+
+    public Group(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, Long lft, Long rgt) {
+        super(id, createBy, createAt, updateBy, updateAt, isDeleted, name, description, lft, rgt);
+    }
 
     @Override
     public String toString() {
@@ -15,14 +25,13 @@ public class Group extends TreeEntity<Group> {
                 .append("id", getId())
                 .append("name", getName())
                 .append("description", getDescription())
-                .append("parent", getParent())
-                .append("parentIds", getParentIds())
-                .append("sequence", getSequence())
+                .append("lft", getLft())
+                .append("rgt", getRgt())
                 .append("createBy", getCreateBy())
                 .append("createAt", getCreateAt())
                 .append("updateBy", getUpdateBy())
                 .append("updateAt", getUpdateAt())
-                .append("IsDeleted", getIsDeleted())
+                .append("isDeleted", getIsDeleted())
                 .toString();
     }
 }

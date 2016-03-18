@@ -13,11 +13,6 @@
         <result column="update_by" property="updateBy.id"/>
     </resultMap>
 
-    <resultMap id="CreateByResult" type="User">
-        <id property="id" column="create_by_id"/>
-        <result property="username" column="create_by_username"/>
-    </resultMap>
-
     <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
         SELECT *
         FROM sys_user

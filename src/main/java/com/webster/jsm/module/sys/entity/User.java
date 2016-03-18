@@ -5,6 +5,8 @@ import com.webster.jsm.core.enumeration.UserType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
+
 
 @Repository
 public class User extends BaseEntity<User>{
@@ -17,6 +19,14 @@ public class User extends BaseEntity<User>{
     private String salt;
 
     public User() {
+    }
+
+    public User(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String username, String password, String salt, UserType userType) {
+        super(id, createBy, createAt, updateBy, updateAt, isDeleted);
+        this.username = username;
+        this.password = password;
+        this.salt = salt;
+        this.userType = userType;
     }
 
     public User(String username, String password, String salt, UserType userType) {

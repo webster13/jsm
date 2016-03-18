@@ -1,16 +1,20 @@
 package com.webster.jsm.core.entity;
 
+import com.webster.jsm.module.sys.entity.User;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.util.Date;
 
 /**
  * 树结构的基类
  * 含有name, description, parentId, parentIds, sequence
  *
  * 树形建模的方案：
- * 查询频繁用“嵌套集合”（nested-sets），增删改频繁用“物化路径”（materialized-paths）
+ * 选用更适宜查询频繁的方案“嵌套集合”（nested-sets）
  * 详见：
  * http://docs.mongoing.com/manual/tutorial/model-tree-structures-with-materialized-paths.html
  * http://blog.csdn.net/monkey_d_meng/article/details/6647488
+ * http://www.cnblogs.com/huangfox/archive/2012/04/11/2442408.html
  *
  * Created by Webster on 2016/3/18.
  */
@@ -20,11 +24,20 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
 
     private String description;
 
-    private T parent;
+    private Long lft;
 
-    private String parentIds;
+    private Long rgt;
 
-    private Long sequence;
+    public TreeEntity() {
+    }
+
+    public TreeEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, Long lft, Long rgt) {
+        super(id, createBy, createAt, updateBy, updateAt, isDeleted);
+        this.name = name;
+        this.description = description;
+        this.lft = lft;
+        this.rgt = rgt;
+    }
 
     public String getName() {
         return name;
@@ -42,28 +55,20 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
         this.description = description;
     }
 
-    public T getParent() {
-        return parent;
+    public Long getLft() {
+        return lft;
     }
 
-    public void setParent(T parent) {
-        this.parent = parent;
+    public void setLft(Long lft) {
+        this.lft = lft;
     }
 
-    public String getParentIds() {
-        return parentIds;
+    public Long getRgt() {
+        return rgt;
     }
 
-    public void setParentIds(String parentIds) {
-        this.parentIds = parentIds;
-    }
-
-    public Long getSequence() {
-        return sequence;
-    }
-
-    public void setSequence(Long sequence) {
-        this.sequence = sequence;
+    public void setRgt(Long rgt) {
+        this.rgt = rgt;
     }
 
     @Override
@@ -71,9 +76,8 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
         return new ToStringBuilder(this)
                 .append("name", name)
                 .append("description", description)
-                .append("parent", parent)
-                .append("parentIds", parentIds)
-                .append("sequence", sequence)
+                .append("lft", lft)
+                .append("rgt", rgt)
                 .toString();
     }
 }

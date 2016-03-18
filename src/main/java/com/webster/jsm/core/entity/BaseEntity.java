@@ -29,6 +29,19 @@ public abstract class BaseEntity<T> implements Serializable {
 
     private Boolean isDeleted;
 
+
+    public BaseEntity() {
+    }
+
+    public BaseEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted) {
+        this.id = id;
+        this.createBy = createBy;
+        this.createAt = createAt;
+        this.updateBy = updateBy;
+        this.updateAt = updateAt;
+        this.isDeleted = isDeleted;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }

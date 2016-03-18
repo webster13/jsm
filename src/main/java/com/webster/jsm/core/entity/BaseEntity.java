@@ -2,11 +2,8 @@ package com.webster.jsm.core.entity;
 
 
 import com.webster.jsm.module.sys.entity.User;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,63 +11,51 @@ import java.util.Date;
  * 实体类的基类,含有" id , createBy , createAt , updateBy , updateAt , isDeleted "字段
  * Created by Webster on 16/3/13.
  */
-public abstract class BaseEntity implements Serializable {
+public abstract class BaseEntity<T> implements Serializable {
     private static final long serialVersionUID = -7978287334714536921L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-//    /**
-//     * 创建者id
-//     */
-//    @Column(name = "create_by")
-//    private User createBy;
+    private User createBy;
 
-    /**
-     * 创建时间
-     */
-    @Column(name = "create_at")
+
     private Date createAt;
 
-//    /**
-//     * 更新者id
-//     */
-//    @Column(name = "update_by")
-//    private User updateBy;
+    private User updateBy;
 
-    /**
-     * 更新时间
-     */
-    @Column(name = "update_at")
+
     private Date updateAt;
 
-    /**
-     * 被删除标记
-     */
-    @Column(name = "is_deleted")
-    private Boolean isDeleted;
 
+    private Boolean isDeleted;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-//    public User getCreateBy() {
-//        return createBy;
-//    }
-//
-//    public void setCreateBy(User createBy) {
-//        this.createBy = createBy;
-//    }
+    public User getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(User createBy) {
+        this.createBy = createBy;
+    }
+
+    public User getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(User updateBy) {
+        this.updateBy = updateBy;
+    }
 
     public Date getCreateAt() {
         return createAt;
@@ -80,13 +65,7 @@ public abstract class BaseEntity implements Serializable {
         this.createAt = createAt;
     }
 
-//    public User getUpdateBy() {
-//        return updateBy;
-//    }
-//
-//    public void setUpdateBy(User updateBy) {
-//        this.updateBy = updateBy;
-//    }
+
 
     public Date getUpdateAt() {
         return updateAt;
@@ -104,5 +83,15 @@ public abstract class BaseEntity implements Serializable {
         this.isDeleted = isDeleted;
     }
 
-
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("createBy", createBy)
+                .append("createAt", createAt)
+                .append("updateBy", updateBy)
+                .append("updateAt", updateAt)
+                .append("isDeleted", isDeleted)
+                .toString();
+    }
 }

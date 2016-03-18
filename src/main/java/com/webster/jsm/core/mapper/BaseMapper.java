@@ -1,14 +1,13 @@
-package com.webster.jsm.core.service;
+package com.webster.jsm.core.mapper;
 
-import com.webster.jsm.core.mapper.BaseMapper;
 
 import java.util.List;
 
 /**
- * 基础Service接口
+ *
  * Created by Webster on 2016/3/18.
  */
-public interface BaseService<SpecificMapper extends BaseMapper<T>,T> {
+public interface BaseMapper<T> {
 
     int deleteById(Long id);
 

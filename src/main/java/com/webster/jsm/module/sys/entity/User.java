@@ -5,11 +5,9 @@ import com.webster.jsm.core.enumeration.UserType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.*;
 
 @Repository
-@Table(name = "sys_user")
-public class User extends BaseEntity{
+public class User extends BaseEntity<User>{
 
 
     private String username;
@@ -28,12 +26,6 @@ public class User extends BaseEntity{
         this.userType = userType;
     }
 
-    /**
-     * staff=员工,
-        student=学生,
-        parent=文件,
-     */
-    @Column(name = "user_type")
     private UserType userType;
 
     public String getUsername() {
@@ -70,11 +62,17 @@ public class User extends BaseEntity{
 
     @Override
     public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", userType=" + userType +
-                '}';
+        return new ToStringBuilder(this)
+                .append("id", getId())
+                .append("username", username)
+                .append("password", password)
+                .append("salt", salt)
+                .append("userType", userType)
+                .append("createBy", getCreateBy())
+                .append("createAt",getCreateAt())
+                .append("updateBy",getUpdateBy())
+                .append("updateAt",getUpdateAt())
+                .append("IsDeleted",getIsDeleted())
+                .toString();
     }
 }

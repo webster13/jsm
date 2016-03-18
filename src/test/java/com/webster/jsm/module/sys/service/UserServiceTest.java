@@ -1,15 +1,11 @@
 package com.webster.jsm.module.sys.service;
 
 import com.webster.jsm.BaseTest;
-import com.webster.jsm.core.enumeration.UserType;
-import com.webster.jsm.module.sys.entity.Staff;
 import com.webster.jsm.module.sys.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import sun.util.calendar.BaseCalendar;
-import sun.util.calendar.LocalGregorianCalendar;
 
-import java.util.Date;
+import java.util.List;
 
 
 public class UserServiceTest extends BaseTest{
@@ -18,55 +14,28 @@ public class UserServiceTest extends BaseTest{
     User user;
 
     @Autowired
-    Staff staff;
-
-    @Autowired
     UserService userService;
-
-    @Autowired
-    StaffService staffService;
 
     @Test
     public void testSelectByUsername() throws Exception {
-        user = userService.findByUsername("linda");
+        user = userService.selectByUsername("linda");
         logger.debug("=========={}============", user);
-
     }
 
     @Test
-    public void testSpring() throws Exception {
-
-        user.setUsername("linda");
-        user.setPassword("511111");
-        user.setUpdateAt(new java.sql.Date(LocalGregorianCalendar.Date.FIELD_UNDEFINED));
+    public void testSelectById() throws Exception {
+        user = userService.selectById(2l);
         logger.debug("=========={}============", user);
-
-
-        staff.setRealName("张楠");
-        logger.debug("=========={}============", staff);
-
-
     }
 
     @Test
-    public void testUserFindbyId() throws Exception {
-        user = userService.findById(2);
-//        user.setUserType(UserType.PARENT);
-//        user.setUsername("张楠");
-//        user.setPassword("ccc1");
-
-        logger.debug("=========={}============", user);
-
-
+    public void testSelectAll() throws Exception {
+        List<User> users = userService.selectAll();
+        logger.debug("=========={}============", users);
     }
-
     @Test
-    public void testStaffFindbyId() throws Exception {
-        staff = staffService.findById(1);
-
-        logger.debug("=========={}============", staff);
-
-
+    public void testDeleteById() throws Exception {
+        Integer result = userService.deleteById(2l);
+        logger.debug("=========={}===========", result);
     }
-
 }

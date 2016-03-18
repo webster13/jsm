@@ -13,10 +13,4 @@ public interface UserService extends BaseService<UserMapper,User> {
 
     User selectByUsername(String username);
 
-    User findByUsername(String username);
-    User findById(Integer id);
-
-    User findUserNameById(Integer id);
-
-
 }

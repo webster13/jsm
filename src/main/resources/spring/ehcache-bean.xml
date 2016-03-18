@@ -21,8 +21,4 @@
         <property name="cacheManager" ref="cacheManagerFactory"/>
     </bean>
 
-
-
-
-
 </beans>

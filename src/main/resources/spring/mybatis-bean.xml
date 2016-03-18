@@ -22,24 +22,11 @@
 
     </bean>
 
-    <!--  通用mapper配置-->
-    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.webster.jsm.**.mapper"/>
-        <property name="properties">
-            <value>
-                mappers=com.webster.jsm.core.util.MyMapper
-            </value>
-        </property>
-        <!--继承通用Mapper的才会被扫描-->
-        <property name="markerInterface" value="com.webster.jsm.core.util.MyMapper"/>
+    <!-- 自动扫描mappers -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!---根据自己的项目路径配置-->
+        <property name="basePackage" value="com.webster.**.mapper"/>
     </bean>
-
-    <!--  pagehelper用到-->
-    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
-          scope="prototype">
-        <constructor-arg index="0" ref="sqlSessionFactory" />
-    </bean>
-
 
 
 

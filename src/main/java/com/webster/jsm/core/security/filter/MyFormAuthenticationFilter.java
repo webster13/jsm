@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 
 /**
  * 自定义表单过滤器，只是的添加了几个异常扑捉，之后输出到views
- * Created by Vince on 2016/3/8.
+ * Created by Webster on 2016/3/8.
  */
 public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
 

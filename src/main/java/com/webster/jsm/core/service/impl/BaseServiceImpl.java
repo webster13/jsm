@@ -1,129 +1,49 @@
 package com.webster.jsm.core.service.impl;
 
+import com.webster.jsm.core.mapper.BaseMapper;
 import com.webster.jsm.core.service.BaseService;
-import com.webster.jsm.core.util.MyMapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.common.Mapper;
+import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * service基类 ,包含了所有MyMapper的Dao方法
- * Created by chenkaihua on 15-12-23.
+ * ToDo...
+ * Created by Webster on 2016/3/18.
  */
-public class BaseServiceImpl<SpecificMapper extends MyMapper<M>,M>
-        implements BaseService<SpecificMapper, M> {
+
+@Service
+public abstract class BaseServiceImpl<SpecificMapper extends BaseMapper<T>, T>
+        implements BaseService<SpecificMapper, T> {
 
     @Autowired
-    SpecificMapper mapper;
+    protected SpecificMapper mapper;
 
 
     @Override
-    public int deleteByExample(Object example) {
-        return mapper.deleteByExample(example);
+    public int deleteById(Long id) {
+
+        return mapper.deleteById(id);
     }
 
     @Override
-    public int deleteByPrimaryKey(Object key) {
-        return mapper.deleteByPrimaryKey(key);
-    }
-
-    @Override
-    public int delete(M record) {
-        return mapper.delete(record);
-    }
-
-
-
-    @Override
-    public int insert(M record) {
+    public int insert(T record) {
         return mapper.insert(record);
+
     }
 
     @Override
-    public int insertList(List<M> recordList) {
-        return mapper.insertList(recordList);
+    public T selectById(Long id) {
+        return mapper.selectById(id);
     }
 
     @Override
-    public int insertSelective(M record) {
-        return mapper.insertSelective(record);
-    }
-
-    @Override
-    public int insertUseGeneratedKeys(M record) {
-        return mapper.insertUseGeneratedKeys(record);
-    }
-
-    @Override
-    public int updateByExample(@Param("record") M record, @Param("example") Object example) {
-        return mapper.updateByExample(record,example);
-    }
-
-    @Override
-    public int updateByExampleSelective(@Param("record") M record, @Param("example") Object example) {
-        return mapper.updateByExampleSelective(record,example);
-    }
-
-    @Override
-    public int updateByPrimaryKey(M record) {
-        return mapper.updateByPrimaryKey(record);
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(M record) {
-        return mapper.updateByPrimaryKeySelective(record);
-    }
-
-
-
-
-    @Override
-    public List<M> selectAll() {
+    public List<T> selectAll() {
         return mapper.selectAll();
     }
 
     @Override
-    public List<M> selectByExample(Object example) {
-        return mapper.selectByExample(example);
+    public int updateById(T record) {
+        return mapper.updateById(record);
     }
-
-    @Override
-    public List<M> selectByExampleAndRowBounds(Object example, RowBounds rowBounds) {
-        return mapper.selectByExampleAndRowBounds(example,rowBounds);
-    }
-
-    @Override
-    public M selectByPrimaryKey(Object key) {
-        return mapper.selectByPrimaryKey(key);
-    }
-
-    @Override
-    public int selectCountByExample(Object example) {
-        return mapper.selectCountByExample(example);
-    }
-
-    @Override
-    public int selectCount(M record) {
-        return mapper.selectCount(record);
-    }
-
-    @Override
-    public List<M> select(M record) {
-        return mapper.select(record);
-    }
-
-    @Override
-    public M selectOne(M record) {
-        return mapper.selectOne(record);
-    }
-
-    @Override
-    public List<M> selectByRowBounds(M record, RowBounds rowBounds) {
-        return mapper.selectByRowBounds(record,rowBounds);
-    }
-
 }

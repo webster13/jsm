@@ -8,37 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * todo
- * Created by Webster on 16/3/13.
+ * ToDo...
+ * Created by Webster on 2016/3/18.
  */
 @Service("userService")
-public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implements UserService {
-
-    @Autowired
-    User user;
+public class UserServiceImpl  extends BaseServiceImpl<UserMapper,User> implements UserService  {
 
     @Autowired
     UserMapper userMapper;
 
     @Override
     public User selectByUsername(String username) {
-        user.setUsername(username);
-        user = selectOne(user);
-        return user;
-    }
-
-    @Override
-    public User findByUsername(String username) {
-        return userMapper.findByUsername(username);
-    }
-    public User findById(Integer id) {
-        user =userMapper.findById(id);
-        return user;
-    }
-
-    @Override
-    public User findUserNameById(Integer id) {
-        user =userMapper.findUserNameById(id);
-        return user;
+        return userMapper.selectByUsername(username);
     }
 }

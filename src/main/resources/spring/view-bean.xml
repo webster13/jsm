@@ -43,8 +43,10 @@
                 <prop key="default_encoding">UTF-8</prop>
                 <prop key="number_format">0.##########</prop>
                 <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
-                <prop key="classic_compatible">true</prop>
+                <!--不验证空值，ftl使用绝对路径，等等，详见http://blog.csdn.net/achilles12345/article/details/38085225-->
+                <prop key="classic_compatible">false</prop>
                 <prop key="template_exception_handler">ignore</prop>
+
             </props>
         </property>
     </bean>

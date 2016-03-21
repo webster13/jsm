@@ -52,7 +52,8 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--  s03 Shiro 权限验证-->
+
+    <!-- Shiro 权限验证-->
     <filter>
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -83,6 +84,19 @@
     *       springMVC请求分发
     ********************************************************************************
     -->
+    <!--静态资源不分发-->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
     <!--mvc请求分发-->
     <servlet>
         <servlet-name>mvc-dispatcher</servlet-name>

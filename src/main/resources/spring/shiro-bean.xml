@@ -75,7 +75,8 @@
         <property name="filterChainDefinitions">
             <!-- 过滤url请求，详见http://blog.csdn.net/jadyer/article/details/12172839-->
             <value>
-                <!--/static/** = anon-->
+                /static/** = anon
+                /test/** = anon
                 <!--/userfiles/** = anon-->
                 <!--/error/** = anon-->
                 /login = authc

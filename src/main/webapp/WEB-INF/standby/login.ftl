@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <p>提示：${msg!}</p>
+    <p>提示：${msg}</p>
 </div>
 <div>
     <img style="width: 100px;height: 100px" src="${base}/static/jsm/img/head1.jpg">
@@ -42,8 +42,6 @@
 
 <a href="${base}/admin"> 管理员首页——需要记住我</a>&nbsp;|&nbsp;
 <a href="${base}/admin/user"> 用户首页——需要登录</a>&nbsp;|&nbsp;
-<a href="${base}/test"> 测试首页</a>&nbsp;|&nbsp;
-<a href="${base}/test/parameter"> 测试传入参数</a>&nbsp;|&nbsp;
 
 </body>
 </html>

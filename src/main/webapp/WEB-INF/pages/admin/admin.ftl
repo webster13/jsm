@@ -1,4 +1,4 @@
-<base id="base" href="${base}">
+<base id="base" href="${basePath}">
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +7,9 @@
 <body>
 
 <h1>admin home</h1>
-<a href="${base}/logout"> 登出</a>&nbsp;|&nbsp;
-<a href="${base}/admin"> 管理员首页——需要记住我</a>&nbsp;|&nbsp;
-<a href="${base}/admin/user"> 用户首页——需要登录</a>&nbsp;|&nbsp;
+<a href="${basePath}/logout"> 登出</a>&nbsp;|&nbsp;
+<a href="${basePath}/admin"> 管理员首页——需要记住我</a>&nbsp;|&nbsp;
+<a href="${basePath}/admin/user"> 用户首页——需要登录</a>&nbsp;|&nbsp;
 
 </body>
 </html>

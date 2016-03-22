@@ -1,4 +1,4 @@
-<base id="base" href="${base}">
+<base id="base" href="${basePath}">
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +9,8 @@
     <p>提示：${msg}</p>
 </div>
 <div>
-    <img style="width: 100px;height: 100px" src="${base}/static/jsm/img/head1.jpg">
-    <form action="${base}/login" method="post">
+    <img style="width: 100px;height: 100px" src="${basePath}/static/jsm/img/head1.jpg">
+    <form action="${basePath}/login" method="post">
         <table>
             <tr>
                 <td>username:</td>
@@ -40,8 +40,8 @@
 
 <p>______________________________________________</p>
 
-<a href="${base}/admin"> 管理员首页——需要记住我</a>&nbsp;|&nbsp;
-<a href="${base}/admin/user"> 用户首页——需要登录</a>&nbsp;|&nbsp;
+<a href="${basePath}/admin"> 管理员首页——需要记住我</a>&nbsp;|&nbsp;
+<a href="${basePath}/admin/user"> 用户首页——需要登录</a>&nbsp;|&nbsp;
 
 </body>
 </html>

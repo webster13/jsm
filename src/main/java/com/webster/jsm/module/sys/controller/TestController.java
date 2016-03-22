@@ -24,9 +24,6 @@ public class TestController {
     private final static Logger logger = LoggerFactory.getLogger(TestController.class);
 
 
-    /**
-     * 首页，直接进入admin管理首页
-     */
     @RequestMapping(method = RequestMethod.GET)
     public String index(Map<String, Object> map) {
         logger.debug("进入test首页");
@@ -35,9 +32,7 @@ public class TestController {
         return "test/test";
     }
 
-    /**
-     * 首页，直接进入admin管理首页
-     */
+
     @RequestMapping(value = "parameter",method = RequestMethod.GET)
     public String learnMVC(@RequestParam(value = "userId", required = false) Integer userIdGot, Model model) {
         String str = "成功得到綁定數據：" + userIdGot;
@@ -46,6 +41,10 @@ public class TestController {
     }
 
 
+    @RequestMapping(value = "metronic",method = RequestMethod.GET)
+    public String metronic(Map<String, Object> map) {
+        return "test/metronic";
+    }
 
 
 

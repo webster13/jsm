@@ -16,7 +16,7 @@ import java.util.Map;
 public class MyFreeMarkerView extends FreeMarkerView {
 
     private static final Logger logger = LoggerFactory.getLogger(MyFreeMarkerView.class);
-    private static final String CONTEXT_PATH = "base";
+    private static final String CONTEXT_PATH = "basePath";
     @Override
     protected void exposeHelpers(Map<String, Object> model,
                                  HttpServletRequest request) throws Exception {

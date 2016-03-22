@@ -1,10 +1,9 @@
-<#macro footFtl>
+<#macro tpJsPlugins>
 
 <!--[if lt IE 9]>
 <script src="${basePath}/static/metronic/assets/global/plugins/respond.min.js"></script>
 <script src="${basePath}/static/metronic/assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
-
 <!-- BEGIN CORE PLUGINS -->
 <script src="${basePath}/static/metronic/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="${basePath}/static/metronic/assets/global/plugins/bootstrap/js/bootstrap.min.js"
@@ -21,22 +20,9 @@
         type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 
-<!-- BEGIN THEME GLOBAL SCRIPTS -->
-<script src="${basePath}/static/metronic/assets/global/scripts/app.min.js" type="text/javascript"></script>
-<!-- END THEME GLOBAL SCRIPTS -->
-
-<!-- BEGIN THEME LAYOUT SCRIPTS -->
-<script src="${basePath}/static/metronic/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
-<script src="${basePath}/static/metronic/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
-<script src="${basePath}/static/metronic/assets/layouts/global/scripts/quick-sidebar.min.js"
-        type="text/javascript"></script>
-<!-- END THEME LAYOUT SCRIPTS -->
-
-<!-- BEGIN 自定义js -->
-
+<!-- BEGIN PAGE LEVEL PLUGINS -->
     <#nested>
-
-<!-- END 自定义js -->
+<!-- END PAGE LEVEL PLUGINS -->
 
 
 </#macro>

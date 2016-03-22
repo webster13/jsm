@@ -19,4 +19,5 @@ public abstract class TreeServiceImpl<SpecificMapper extends TreeMapper<T>, T>
     public int insert(Long parentId, T record) {
         return mapper.insert(parentId,record);
     }
+
 }

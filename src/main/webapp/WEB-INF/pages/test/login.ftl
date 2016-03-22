@@ -35,9 +35,9 @@
         <div style="padding: 12px">&nbsp;</div>
 
         <#if msg??>
-            <div class="alert alert-danger display">
+            <div class="alert alert-danger display-hide">
                 <button class="close" data-close="alert"></button>
-                <span> ${msg!"空"} </span>
+                <span> ${msg} </span>
             </div>
         </#if>
 

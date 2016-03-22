@@ -12,6 +12,8 @@ import java.util.Date;
 public class Group extends TreeEntity<Group> {
 
 
+    private static final long serialVersionUID = 129016309492345301L;
+
     public Group() {
     }
 

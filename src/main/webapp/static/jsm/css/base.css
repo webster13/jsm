@@ -1,17 +1,21 @@
-.logo {
+.jsm-logo {
     line-height: 46PX;
     height: 46px;
     min-height: 46px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.logo_cn {
+.logo-big{
+    font-size: 24px;
+}
+
+.logo-cn {
     vertical-align: middle;
     color: #FFFFFF;
 
 }
 
-.logo_en {
+.logo-en {
     vertical-align: middle;
     font-weight: bold;
     color: #FE3E3E;

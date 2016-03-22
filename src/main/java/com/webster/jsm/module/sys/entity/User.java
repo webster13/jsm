@@ -12,6 +12,7 @@ import java.util.Date;
 public class User extends BaseEntity<User>{
 
 
+    private static final long serialVersionUID = -1180866092948706285L;
     private String username;
 
     private String password;

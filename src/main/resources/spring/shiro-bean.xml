@@ -63,7 +63,7 @@
         <!-- 要求登录时的链接 &ndash;&gt;-->
         <property name="loginUrl" value="/login"/>
         <!-- 登录成功后要跳转的连接 -->
-        <property name="successUrl" value="/admin/index"/>
+        <property name="successUrl" value="/index"/>
         <!-- 用户访问未对其授权的资源时,所显示的连接 -->
         <property name="unauthorizedUrl" value="/error/msg"/>
         <!-- 表单登录过滤，必须设置好上面的loginUrl和下面的地址过滤/login=authc-->
@@ -80,6 +80,7 @@
                 <!--/userfiles/** = anon-->
                 <!--/error/** = anon-->
                 /login = authc
+                /index = user
                 /logout = logout
                 ${sys.adminPath}/user/** = authc
                 ${sys.adminPath}/** = user

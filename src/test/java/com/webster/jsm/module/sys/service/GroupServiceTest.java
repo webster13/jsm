@@ -23,10 +23,11 @@ public class GroupServiceTest extends BaseTest {
     @Test
     public void testInsert() throws Exception {
         user.setId(1l);
+        Long parentId = 1l;
         Date now = new Date();
 
-        Group group = new Group(1l, user, now, user, now, false,
-                "根", "根目录", 1l, 2l);
+        Group group = new Group(parentId, user, now, user, now, false,
+                "根", "根目录", parentId, parentId+2);
 
         groupService.insert(group);
 

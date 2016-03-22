@@ -1,7 +1,8 @@
+<#macro headFtl title>
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8"/>
-    <title>Metronic | Blank Page Layout</title>
+    <title>${title}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="" name="description"/>
@@ -31,5 +32,14 @@
     <link href="${basePath}/static/metronic/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="${basePath}/static/jsm/img/favicon.ico"/>
+    <link href="${basePath}/static/jsm/css/base.css" rel="stylesheet" type="text/css"/>
+
+    <!-- BEGIN 自定义css -->
+
+    <#nested>
+
+    <!-- END 自定义css -->
+
 </head>
 <!-- END HEAD -->
+</#macro>

@@ -1,3 +1,4 @@
+<#macro footFtl>
 
 <!--[if lt IE 9]>
 <script src="${basePath}/static/metronic/assets/global/plugins/respond.min.js"></script>
@@ -28,3 +29,12 @@
 <script src="${basePath}/static/metronic/assets/layouts/global/scripts/quick-sidebar.min.js"
         type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+
+<!-- BEGIN 自定义js -->
+
+    <#nested>
+
+<!-- END 自定义js -->
+
+
+</#macro>

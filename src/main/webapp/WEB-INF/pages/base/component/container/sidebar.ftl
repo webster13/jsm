@@ -24,7 +24,7 @@
                 <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
                 <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
                 <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
-                <form class="sidebar-search  sidebar-search-bordered" action="page_general_search_3.html"
+                <form class="sidebar-search  " action="page_general_search_3.html"
                       method="POST">
                     <a href="javascript:;" class="remove">
                         <i class="icon-close"></i>

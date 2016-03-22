@@ -1,24 +1,35 @@
-<#macro baseFtl>
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-    <#include "/base/component/head.ftl"/>
+<#macro baseHead headTitle>
+<#--html起始标签-->
+    <#include "/base/component/unchangeable/beginning.ftl"/>
+    <#import "/base/component/head_css.ftl" as head/>
+    <@head.headFtl title=headTitle>
+    <#--此处填写自定义的css-->
+        <#nested>
+    </@head.headFtl>
+</#macro>
 
 
+
+
+<#macro baseBody>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <#include "/base/component/header.ftl"/>
 
-    <#include "/base/component/header/header.ftl"/>
+<#--清除浮动-->
+    <#include "/base/component/unchangeable/clearfix.ftl"/>
+    <#include "/base/component/container.ftl"/>
+</#macro>
 
-<!-- BEGIN HEADER & CONTENT DIVIDER 清屏，以下开始页面内容-->
-<div class="clearfix"></div>
-<!-- END HEADER & CONTENT DIVIDER 清屏，以下开始页面内容-->
 
 
-    <#include "/base/component/container/container.ftl"/>
+<#macro baseFoot>
     <#include "/base/component/footer.ftl"/>
-    <#include "/base/component/js.ftl"/>
+    <#import "/base/component/foot_js.ftl" as foot/>
+    <@foot.footFtl >
+    <#--此处填写自定义的js-->
+        <#nested>
+    </@foot.footFtl>
 </body>
-</html>
+<#--html结束标签-->
+    <#include "/base/component/unchangeable/ending.ftl"/>
 </#macro>

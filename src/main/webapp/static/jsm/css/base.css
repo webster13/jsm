@@ -1,0 +1,19 @@
+.logo {
+    line-height: 46PX;
+    height: 46px;
+    min-height: 46px;
+    font-size: 16px;
+}
+
+.logo_cn {
+    vertical-align: middle;
+    color: #FFFFFF;
+
+}
+
+.logo_en {
+    vertical-align: middle;
+    font-weight: bold;
+    color: #FE3E3E;
+
+}

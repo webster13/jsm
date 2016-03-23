@@ -7,9 +7,9 @@
 <#import "/base/component/unchangeable/cssPlugins.ftl" as imCssPlugins>
 <@imCssPlugins>
 <#--页面级css库-->
-<link href="${basePath}/static/metronic/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet"
+<link href="${basePath}/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet"
       type="text/css"/>
-<link href="${basePath}/static/metronic/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet"
+<link href="${basePath}/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet"
       type="text/css"/>
 </@imCssPlugins>
 
@@ -17,11 +17,11 @@
 <#import "/base/component/unchangeable/css.ftl" as imCss>
 <@imCss>
 <#--页面级css-->
-<link href="${basePath}/static/metronic/assets/pages/css/login-4.min.css" rel="stylesheet" type="text/css"/>
+<link href="${basePath}/assets/pages/css/login-4.min.css" rel="stylesheet" type="text/css"/>
 </@imCss>
 
 
-<link rel="shortcut icon" href="${basePath}/static/jsm/img/favicon.ico"/>
+<link rel="shortcut icon" href="${basePath}/assets/jsm/img/favicon.ico"/>
 
 <!-- END HEAD -->
 
@@ -84,13 +84,13 @@
 <#import "/base/component/unchangeable/jsPlugins.ftl" as imJsPlugins>
 <@imJsPlugins>
 <#--页面级js插件-->
-<script src="${basePath}/static/metronic/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
+<script src="${basePath}/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
         type="text/javascript"></script>
-<script src="${basePath}/static/metronic/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
+<script src="${basePath}/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
         type="text/javascript"></script>
-<script src="${basePath}/static/metronic/assets/global/plugins/select2/js/select2.full.min.js"
+<script src="${basePath}/assets/global/plugins/select2/js/select2.full.min.js"
         type="text/javascript"></script>
-<script src="${basePath}/static/metronic/assets/global/plugins/backstretch/jquery.backstretch.min.js"
+<script src="${basePath}/assets/global/plugins/backstretch/jquery.backstretch.min.js"
         type="text/javascript"></script>
 </@imJsPlugins>
 
@@ -99,7 +99,7 @@
 <#import "/base/component/unchangeable/js.ftl" as imJs>
 <@imJs>
 <#--页面级js-->
-<script src="${basePath}/static/metronic/assets/pages/scripts/login-4.min.js" type="text/javascript"></script>
+<script src="${basePath}/assets/pages/scripts/login-4.min.js" type="text/javascript"></script>
 </@imJs>
 
 

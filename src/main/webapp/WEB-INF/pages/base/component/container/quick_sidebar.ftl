@@ -51,7 +51,7 @@
                                 <span class="badge badge-success">8</span>
                             </div>
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar3.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar3.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Bob Nilson</h4>
@@ -61,7 +61,7 @@
                         </li>
                         <li class="media">
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar1.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar1.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Nick Larson</h4>
@@ -74,7 +74,7 @@
                                 <span class="badge badge-danger">3</span>
                             </div>
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar4.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar4.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Deon Hubert</h4>
@@ -84,7 +84,7 @@
                         </li>
                         <li class="media">
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar2.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar2.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Ella Wong</h4>
@@ -100,7 +100,7 @@
                                 <span class="badge badge-warning">2</span>
                             </div>
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar6.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar6.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Lara Kunis</h4>
@@ -114,7 +114,7 @@
                                 <span class="label label-sm label-success">new</span>
                             </div>
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar7.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar7.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Ernie Kyllonen</h4>
@@ -126,7 +126,7 @@
                         </li>
                         <li class="media">
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar8.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar8.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Lisa Stone</h4>
@@ -140,7 +140,7 @@
                                 <span class="badge badge-success">7</span>
                             </div>
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar9.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar9.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Deon Portalatin</h4>
@@ -150,7 +150,7 @@
                         </li>
                         <li class="media">
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar10.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar10.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Irina Savikova</h4>
@@ -163,7 +163,7 @@
                                 <span class="badge badge-danger">4</span>
                             </div>
                             <img class="media-object"
-                                 src="${basePath}/static/metronic/assets/layouts/layout/img/avatar11.jpg" alt="...">
+                                 src="${basePath}/assets/layouts/layout/img/avatar11.jpg" alt="...">
 
                             <div class="media-body">
                                 <h4 class="media-heading">Maria Gomez</h4>
@@ -183,7 +183,7 @@
                         <div class="page-quick-sidebar-chat-user-messages">
                             <div class="post out">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar3.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar3.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -194,7 +194,7 @@
                             </div>
                             <div class="post in">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar2.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar2.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -205,7 +205,7 @@
                             </div>
                             <div class="post out">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar3.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar3.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -216,7 +216,7 @@
                             </div>
                             <div class="post in">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar2.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar2.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -227,7 +227,7 @@
                             </div>
                             <div class="post out">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar3.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar3.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -238,7 +238,7 @@
                             </div>
                             <div class="post in">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar2.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar2.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -249,7 +249,7 @@
                             </div>
                             <div class="post out">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar3.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar3.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -260,7 +260,7 @@
                             </div>
                             <div class="post in">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar2.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar2.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>
@@ -271,7 +271,7 @@
                             </div>
                             <div class="post out">
                                 <img class="avatar" alt=""
-                                     src="${basePath}/static/metronic/assets/layouts/layout/img/avatar3.jpg"/>
+                                     src="${basePath}/assets/layouts/layout/img/avatar3.jpg"/>
 
                                 <div class="message">
                                     <span class="arrow"></span>

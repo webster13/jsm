@@ -1,16 +1,16 @@
 <#macro tpCssPlugins>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="${basePath}/static/jsm/css/font-google.css" rel="stylesheet" type="text/css"/>
-<link href="${basePath}/static/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+<link href="${basePath}/assets/jsm/css/font-google.css" rel="stylesheet" type="text/css"/>
+<link href="${basePath}/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
       type="text/css"/>
-<link href="${basePath}/static/metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
+<link href="${basePath}/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
       rel="stylesheet" type="text/css"/>
-<link href="${basePath}/static/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+<link href="${basePath}/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"
       type="text/css"/>
-<link href="${basePath}/static/metronic/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet"
+<link href="${basePath}/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet"
       type="text/css"/>
-<link href="${basePath}/static/metronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
+<link href="${basePath}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
       rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 

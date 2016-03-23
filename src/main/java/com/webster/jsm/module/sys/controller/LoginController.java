@@ -25,7 +25,7 @@ public class LoginController  {
      */
     @RequestMapping( method = RequestMethod.GET)
     public String index() {
-        return "redirect:/admin" ;
+        return "redirect:/index" ;
     }
 
 
@@ -38,7 +38,7 @@ public class LoginController  {
         //如果是已认证的则跳转admin,如果是remembered,则不会跳转
         if(currentUser.isAuthenticated()){
             logger.debug("已有用户{},跳转admin主页",currentUser.getPrincipal());
-            return "redirect:/admin" ;
+            return "redirect:/index" ;
         }
         return "login";
 
@@ -68,4 +68,12 @@ public class LoginController  {
 
     }
 
+    /**
+     * 登录成功
+     */
+    @RequestMapping(value = "index", method = RequestMethod.GET)
+    public String logSuccess() {
+        logger.debug("进入首页");
+        return "index";
+    }
 }

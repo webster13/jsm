@@ -9,7 +9,7 @@
     <p>提示：${msg!}</p>
 </div>
 <div>
-    <img style="width: 100px;height: 100px" src="${basePath}/static/jsm/img/head1.jpg">
+    <img style="width: 100px;height: 100px" src="${basePath}/assets/jsm/img/head1.jpg">
     <form action="${basePath}/login" method="post">
         <table>
             <tr>

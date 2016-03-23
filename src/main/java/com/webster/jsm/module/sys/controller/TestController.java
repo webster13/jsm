@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Arrays;
 import java.util.Map;
 
 
@@ -23,14 +22,11 @@ public class TestController {
 
     private final static Logger logger = LoggerFactory.getLogger(TestController.class);
 
-
-    @RequestMapping(method = RequestMethod.GET)
-    public String index(Map<String, Object> map) {
-        logger.debug("进入test首页");
-        map.put( "names", Arrays.asList("Webster", "Linda", "Mike"));
-        map.put( "car", "奥迪");
-        return "test/test";
+    @RequestMapping(value = "tree",method = RequestMethod.GET)
+    public String tree(Map<String, Object> map) {
+        return "test/tree";
     }
+
 
 
     @RequestMapping(value = "parameter",method = RequestMethod.GET)

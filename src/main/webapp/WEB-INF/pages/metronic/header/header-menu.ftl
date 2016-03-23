@@ -84,12 +84,12 @@
                     </ul>
                 </li>
                 <li class="menu-dropdown classic-menu-dropdown active">
-                    <a href="javascript:;"> Layouts
+                    <a href="javascript:;"> 测试
                         <span class="arrow"></span>
                     </a>
                     <ul class="dropdown-menu pull-left">
                         <li class=" ">
-                            <a href="layout_mega_menu_light.html" class="nav-link  "> Light Mega Menu </a>
+                            <a href="${basePath}/test/tree" class="nav-link  "> 测试树 </a>
                         </li>
                     </ul>
                 </li>

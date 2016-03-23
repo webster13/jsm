@@ -1,7 +1,7 @@
 <!-- BEGIN LOGO -->
 <div class="page-logo">
-    <a href="index.html">
-        <img src="${basePath}/assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
+    <a href="${basePath}/index">
+        <img src="${basePath}/assets/jsm/img/logo71.png" alt="logo" class="jsm-logo-index">
     </a>
 </div>
 <!-- END LOGO -->

@@ -14,14 +14,14 @@
         <div class="top-menu">
             <ul class="nav navbar-nav pull-right">
 
-            <#--<#include "/metronic/header/top/notification.ftl" />-->
-            <#--<#include "/metronic/header/top/pending.ftl" />-->
-                <#--<li class="droddown dropdown-separator">-->
-                    <#--<span class="separator"></span>-->
-                <#--</li>-->
-            <#--<#include "/metronic/header/top/inbox.ftl" />-->
+            <#include "/metronic/header/top/notification.ftl" />
+            <#include "/metronic/header/top/pending.ftl" />
+                <li class="droddown dropdown-separator">
+                    <span class="separator"></span>
+                </li>
+            <#include "/metronic/header/top/inbox.ftl" />
             <#include "/metronic/header/top/user.ftl" />
-            <#--<#include "/metronic/header/top/sidebar.ftl" />-->
+            <#include "/metronic/header/top/sidebar.ftl" />
 
             </ul>
         </div>

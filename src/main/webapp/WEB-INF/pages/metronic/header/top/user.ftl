@@ -7,32 +7,32 @@
     <ul class="dropdown-menu dropdown-menu-default">
         <li>
             <a href="page_user_profile_1.html">
-                <i class="icon-user"></i> My Profile </a>
+                <i class="icon-user"></i> 个人中心 </a>
         </li>
         <li>
             <a href="app_calendar.html">
-                <i class="icon-calendar"></i> My Calendar </a>
+                <i class="icon-calendar"></i> 日程 </a>
         </li>
         <li>
             <a href="app_inbox.html">
-                <i class="icon-envelope-open"></i> My Inbox
+                <i class="icon-envelope-open"></i> 消息
                 <span class="badge badge-danger"> 3 </span>
             </a>
         </li>
         <li>
             <a href="app_todo_2.html">
-                <i class="icon-rocket"></i> My Tasks
+                <i class="icon-rocket"></i> 待办
                 <span class="badge badge-success"> 7 </span>
             </a>
         </li>
         <li class="divider"> </li>
         <li>
             <a href="page_user_lock_1.html">
-                <i class="icon-lock"></i> Lock Screen </a>
+                <i class="icon-lock"></i> 锁屏 </a>
         </li>
         <li>
-            <a href="page_user_login_1.html">
-                <i class="icon-key"></i> Log Out </a>
+            <a href="${basePath}/logout">
+                <i class="icon-key"></i> 登出 </a>
         </li>
     </ul>
 </li>

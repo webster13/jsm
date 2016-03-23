@@ -22,7 +22,8 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="#">
-        <img src="${basePath}/assets/jsm/img/logo_login.png">
+        <#--<img src="${basePath}/assets/jsm/img/logo_login.png">-->
+        <img src="${basePath}/assets/jsm/img/logo22.png">
     </a>
 </div>
 <!-- END LOGO -->

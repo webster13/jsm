@@ -52,6 +52,10 @@ public abstract class BaseServiceImpl<SpecificMapper extends BaseMapper<T>, T ex
 
     @Override
     public int updateById(T record) {
+        if(record.getId()==null){
+            throw new NullPointerException("ID不能为空");
+        }
         return mapper.updateById(record);
+
     }
 }

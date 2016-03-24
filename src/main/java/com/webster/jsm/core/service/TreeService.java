@@ -13,11 +13,12 @@ public interface TreeService<SpecificMapper extends TreeMapper<T>,T extends Tree
 
         extends BaseService<SpecificMapper,T> {
 
-    int selectByName(String name);
+    List<T> selectByName(String name);
     List<T> selectAllSon(T parent);
     List<T> selectImmediateSon(Long parentId);
     List<T> selectAllParent(Long sonId);
     Integer countSon(T parent);
+    Integer countImmediateSon(Long parentId);
     Boolean isHaveSon(T parent);
 
 

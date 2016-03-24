@@ -12,10 +12,11 @@ import java.util.List;
 public interface TreeMapper<T extends TreeEntity> extends BaseMapper<T> {
 
 
-    int selectByName(String name);
+    List<T> selectByName(String name);
     List<T> selectAllSon(T parent);
     List<T> selectImmediateSon(Long parentId);
     List<T> selectAllParent(Long sonId);
+    Integer countImmediateSon(Long parentId);
 
 
 

@@ -11,7 +11,7 @@ import java.util.Date;
  * 实体类的基类,含有" id , createBy , createAt , updateBy , updateAt , isDeleted "字段
  * Created by Webster on 16/3/13.
  */
-public abstract class BaseEntity<T> implements Serializable {
+public  class BaseEntity<T extends  BaseEntity> implements Serializable {
     private static final long serialVersionUID = -7978287334714536921L;
 
     private Long id;

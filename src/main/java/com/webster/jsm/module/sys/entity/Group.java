@@ -23,7 +23,7 @@ public class Group extends TreeEntity<Group> {
         super(id);
     }
 
-    public Group(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, Group parent, Long lft, Long rgt) {
+    public Group(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, Long parent, Long lft, Long rgt) {
         super(id, createBy, createAt, updateBy, updateAt, isDeleted, name, description, parent, lft, rgt);
     }
 

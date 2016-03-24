@@ -22,6 +22,10 @@ public class User extends BaseEntity<User>{
     public User() {
     }
 
+    public User(Long id) {
+        super(id);
+    }
+
     public User(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String username, String password, String salt, UserType userType) {
         super(id, createBy, createAt, updateBy, updateAt, isDeleted);
         this.username = username;
@@ -30,12 +34,7 @@ public class User extends BaseEntity<User>{
         this.userType = userType;
     }
 
-    public User(String username, String password, String salt, UserType userType) {
-        this.username = username;
-        this.password = password;
-        this.salt = salt;
-        this.userType = userType;
-    }
+
 
     private UserType userType;
 
@@ -70,7 +69,9 @@ public class User extends BaseEntity<User>{
     public void setUserType(UserType userType) {
         this.userType = userType;
     }
-
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
     @Override
     public String toString() {
         return new ToStringBuilder(this)

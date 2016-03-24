@@ -5,7 +5,7 @@
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="description" property="description" jdbcType="VARCHAR"/>
-        <result column="parent" property="parent.id" jdbcType="BIGINT"/>
+        <result column="parent" property="parent" jdbcType="BIGINT" />
         <result column="lft" property="lft" jdbcType="BIGINT"/>
         <result column="rgt" property="rgt" jdbcType="BIGINT"/>
         <result column="create_by" property="createBy.id" jdbcType="BIGINT"/>
@@ -33,7 +33,7 @@
                                lft, rgt, create_by, create_at,
                                update_by, update_at, is_deleted
         )
-        VALUES (#{name}, #{description},#{parent.id},
+        VALUES (#{name}, #{description},#{parent},
                 #{lft}, #{rgt}, #{createBy.id},
                 #{createAt},
                 #{updateBy.id}, #{updateAt}, #{isDeleted}
@@ -55,7 +55,7 @@
         update sys_group
         set name = #{name,jdbcType=VARCHAR},
             description = #{description,jdbcType=VARCHAR},
-            parent = #{parent.id,jdbcType=BIGINT},
+            parent = #{parent,jdbcType=BIGINT},
             lft = #{lft,jdbcType=BIGINT},
             rgt = #{rgt,jdbcType=BIGINT},
             create_by = #{createBy.id,jdbcType=INTEGER},
@@ -88,9 +88,13 @@
 
     <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
         SELECT *
-        FROM sys_user
-        WHERE sys_group.name LIKE '%'+#{name}+'%';
+        FROM sys_group
+        WHERE sys_group.name LIKE concat('%',#{name},'%');
     </select>
+    <!--WHERE sys_group.name = #{name} ;-->
+
+
+
 
     <select id="selectAllSon" resultMap="BaseResultMap"  parameterType="Group">
         SELECT * FROM sys_group
@@ -104,6 +108,11 @@
 
     <select id="selectImmediateSon"  resultMap="BaseResultMap" parameterType="java.lang.Long">
         SELECT * FROM sys_group
+        WHERE sys_group.parent = #{id};
+    </select>
+
+    <select id="countImmediateSon"  resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT COUNT(1) FROM sys_group
         WHERE sys_group.parent = #{id};
     </select>
     <!-- TreeService的方法结束-->

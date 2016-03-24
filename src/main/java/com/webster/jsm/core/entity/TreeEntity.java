@@ -18,13 +18,13 @@ import java.util.Date;
  *
  * Created by Webster on 2016/3/18.
  */
-public abstract class TreeEntity<T> extends BaseEntity<T> {
+public class TreeEntity<T extends TreeEntity> extends BaseEntity<T> {
 
     private String name;
 
     private String description;
 
-    private T parent;
+    private Long parent;
 
     private Long lft;
 
@@ -37,7 +37,7 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
         super(id);
     }
 
-    public TreeEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, T parent, Long lft, Long rgt) {
+    public TreeEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, Long parent, Long lft, Long rgt) {
         super(id, createBy, createAt, updateBy, updateAt, isDeleted);
         this.name = name;
         this.description = description;
@@ -46,11 +46,11 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
         this.rgt = rgt;
     }
 
-    public T getParent() {
+    public Long getParent() {
         return parent;
     }
 
-    public void setParent(T parent) {
+    public void setParent(Long parent) {
         this.parent = parent;
     }
 

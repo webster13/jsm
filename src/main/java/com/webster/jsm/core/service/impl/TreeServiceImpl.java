@@ -16,7 +16,7 @@ public abstract class TreeServiceImpl<SpecificMapper extends TreeMapper<T>, T ex
         implements TreeService<SpecificMapper, T> {
 
     @Override
-    public int selectByName(String name) {
+    public List<T> selectByName(String name) {
         return mapper.selectByName(name);
     }
 
@@ -39,6 +39,11 @@ public abstract class TreeServiceImpl<SpecificMapper extends TreeMapper<T>, T ex
     public Integer countSon(T parent) {
         return (int)(parent.getRgt()-parent.getLft()-1)/2;
     }
+    @Override
+    public Integer countImmediateSon(Long id) {
+        return mapper.countImmediateSon(id);
+    }
+
 
     @Override
     public Boolean isHaveSon(T parent) {

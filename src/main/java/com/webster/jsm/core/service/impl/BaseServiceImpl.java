@@ -1,9 +1,9 @@
 package com.webster.jsm.core.service.impl;
 
+import com.webster.jsm.core.entity.BaseEntity;
 import com.webster.jsm.core.mapper.BaseMapper;
 import com.webster.jsm.core.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,12 +12,15 @@ import java.util.List;
  * Created by Webster on 2016/3/18.
  */
 
-@Service
-public abstract class BaseServiceImpl<SpecificMapper extends BaseMapper<T>, T>
+
+public abstract class BaseServiceImpl<SpecificMapper extends BaseMapper<T>, T extends BaseEntity>
         implements BaseService<SpecificMapper, T> {
 
+
     @Autowired
-    protected SpecificMapper mapper;
+    protected SpecificMapper mapper ;
+
+
 
 
     @Override
@@ -40,6 +43,11 @@ public abstract class BaseServiceImpl<SpecificMapper extends BaseMapper<T>, T>
     @Override
     public List<T> selectAll() {
         return mapper.selectAll();
+    }
+
+    @Override
+    public Long countAll() {
+        return mapper.countAll();
     }
 
     @Override

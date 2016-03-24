@@ -33,6 +33,10 @@ public abstract class BaseEntity<T> implements Serializable {
     public BaseEntity() {
     }
 
+    public BaseEntity(Long id) {
+        this.id = id;
+    }
+
     public BaseEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted) {
         this.id = id;
         this.createBy = createBy;

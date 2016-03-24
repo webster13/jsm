@@ -5,26 +5,108 @@
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="parent" property="parent.id" jdbcType="BIGINT"/>
         <result column="lft" property="lft" jdbcType="BIGINT"/>
         <result column="rgt" property="rgt" jdbcType="BIGINT"/>
-        <result column="create_by" property="createBy.id" jdbcType="INTEGER"/>
+        <result column="create_by" property="createBy.id" jdbcType="BIGINT"/>
         <result column="create_at" property="createAt" jdbcType="TIMESTAMP"/>
-        <result column="update_by" property="updateBy.id" jdbcType="INTEGER"/>
+        <result column="update_by" property="updateBy.id" jdbcType="BIGINT"/>
         <result column="update_at" property="updateAt" jdbcType="TIMESTAMP"/>
         <result column="is_deleted" property="isDeleted" jdbcType="BIT"/>
     </resultMap>
 
+
+
+    <!--
+        BaseService包含：增、删、查、改、全部、总数
+
+            int insert(T record);
+            int deleteById(Long id);
+            T selectById(Long id);
+            int updateById(T record);
+            List<T> selectAll();
+            Long countAll();
+    -->
+
     <insert id="insert" parameterType="Group">
-        INSERT INTO sys_group (name, description,
+        INSERT INTO sys_group (name, description,parent,
                                lft, rgt, create_by, create_at,
                                update_by, update_at, is_deleted
         )
-        VALUES (#{name}, #{description},
+        VALUES (#{name}, #{description},#{parent.id},
                 #{lft}, #{rgt}, #{createBy.id},
                 #{createAt},
                 #{updateBy.id}, #{updateAt}, #{isDeleted}
-        )
+        );
     </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM sys_group
+        WHERE id = #{id};
+    </delete>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT *
+        FROM sys_group
+        WHERE sys_group.id = #{id};
+    </select>
+
+    <update id="updateById" parameterType="Group">
+        update sys_group
+        set name = #{name,jdbcType=VARCHAR},
+            description = #{description,jdbcType=VARCHAR},
+            parent = #{parent.id,jdbcType=BIGINT},
+            lft = #{lft,jdbcType=BIGINT},
+            rgt = #{rgt,jdbcType=BIGINT},
+            create_by = #{createBy.id,jdbcType=INTEGER},
+            create_at = #{createAt,jdbcType=TIMESTAMP},
+            update_by = #{updateBy.id,jdbcType=INTEGER},
+            update_at = #{updateAt,jdbcType=TIMESTAMP},
+            is_deleted = #{isDeleted,jdbcType=BIT}
+        where id = #{id,jdbcType=BIGINT}
+
+    </update>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT *
+        FROM sys_group;
+    </select>
+
+    <select id="countAll" resultType="java.lang.Long">
+        SELECT COUNT(1) FROM sys_group;
+    </select>
+    <!-- BaseService的方法结束-->
+
+    <!--
+        TreeService包含：1根据姓名查，2获取所有子节点，3获取所有直系子节点，4获取所有父节点
+
+            int selectByName(String name);
+            List<T> selectAllSon(T parent);
+            List<T> selectImmediateSon(Long parentId);
+            List<T> selectAllParent(Long sonId);
+    -->
+
+    <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT *
+        FROM sys_user
+        WHERE sys_group.name LIKE '%'+#{name}+'%';
+    </select>
+
+    <select id="selectAllSon" resultMap="BaseResultMap"  parameterType="Group">
+        SELECT * FROM sys_group
+        WHERE <![CDATA[sys_group.lft > #{lft} AND sys_group.rgt < #{rgt} ]]>;
+    </select>
+
+    <select id="selectAllParent" resultMap="BaseResultMap"  parameterType="Group" >
+        SELECT * FROM sys_group
+        WHERE <![CDATA[sys_group.lft < #{lft} AND sys_group.rgt > #{rgt} ]]> ORDER BY Lft ASC;
+    </select>
+
+    <select id="selectImmediateSon"  resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT * FROM sys_group
+        WHERE sys_group.parent = #{id};
+    </select>
+    <!-- TreeService的方法结束-->
 
 
 </mapper>

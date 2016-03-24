@@ -29,17 +29,12 @@ public class TestController {
 
 
 
-    @RequestMapping(value = "parameter",method = RequestMethod.GET)
-    public String learnMVC(@RequestParam(value = "userId", required = false) Integer userIdGot, Model model) {
-        String str = "成功得到綁定數據：" + userIdGot;
+
+    @RequestMapping(value = "group",method = RequestMethod.GET)
+    public String group(@RequestParam(value = "userId", required = false) Integer userId, Model model) {
+        String str = "成功得到綁定數據：" + userId;
         model.addAttribute("msg", str);
         return "test/parameter";
-    }
-
-
-    @RequestMapping(value = "metronic",method = RequestMethod.GET)
-    public String metronic(Map<String, Object> map) {
-        return "test/metronic";
     }
 
 

@@ -11,5 +11,4 @@ import com.webster.jsm.module.sys.mapper.GroupMapper;
  */
 public interface GroupService extends TreeService<GroupMapper,Group> {
 
-
 }

@@ -24,6 +24,8 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
 
     private String description;
 
+    private T parent;
+
     private Long lft;
 
     private Long rgt;
@@ -31,12 +33,25 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
     public TreeEntity() {
     }
 
-    public TreeEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, Long lft, Long rgt) {
+    public TreeEntity(Long id) {
+        super(id);
+    }
+
+    public TreeEntity(Long id, User createBy, Date createAt, User updateBy, Date updateAt, Boolean isDeleted, String name, String description, T parent, Long lft, Long rgt) {
         super(id, createBy, createAt, updateBy, updateAt, isDeleted);
         this.name = name;
         this.description = description;
+        this.parent = parent;
         this.lft = lft;
         this.rgt = rgt;
+    }
+
+    public T getParent() {
+        return parent;
+    }
+
+    public void setParent(T parent) {
+        this.parent = parent;
     }
 
     public String getName() {
@@ -76,6 +91,7 @@ public abstract class TreeEntity<T> extends BaseEntity<T> {
         return new ToStringBuilder(this)
                 .append("name", name)
                 .append("description", description)
+                .append("parent", parent)
                 .append("lft", lft)
                 .append("rgt", rgt)
                 .toString();

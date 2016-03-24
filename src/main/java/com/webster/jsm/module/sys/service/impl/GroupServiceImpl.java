@@ -13,9 +13,6 @@ import org.springframework.stereotype.Service;
  */
 @Service("groupService")
 public class GroupServiceImpl extends TreeServiceImpl<GroupMapper,Group> implements GroupService {
-
     @Autowired
     GroupMapper groupMapper;
-
-
 }

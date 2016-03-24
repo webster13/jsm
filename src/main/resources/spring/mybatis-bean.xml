@@ -18,7 +18,7 @@
         <!--mybatis配置文件路径-->
         <property name="configLocation" value="classpath:config/mybatis.xml"/>
         <!-- Mapper xml -->
-        <property name="mapperLocations" value="classpath:com/webster/jsm/**/mapper/*Mapper.xml"/>
+        <property name="mapperLocations" value="classpath:com/webster/jsm/module/**/mapper/*Mapper.xml"/>
 
     </bean>
 

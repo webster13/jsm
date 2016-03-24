@@ -2,11 +2,8 @@ package com.webster.jsm.module.sys.service;
 
 import com.webster.jsm.BaseTest;
 import com.webster.jsm.module.sys.entity.Group;
-import com.webster.jsm.module.sys.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Date;
 
 /**
  * todo
@@ -15,24 +12,71 @@ import java.util.Date;
 public class GroupServiceTest extends BaseTest {
 
     @Autowired
-    User user;
+    Group group;
 
     @Autowired
     GroupService groupService;
 
+
     @Test
-    public void testInsert() throws Exception {
-        user.setId(1l);
-        Long parentId = 1l;
-        Date now = new Date();
+    public void testDeleteById() throws Exception {
 
-        Group group = new Group(parentId, user, now, user, now, false,
-                "根", "根目录", parentId, parentId+2);
-
-        groupService.insert(group);
-
-        logger.debug("=========={}============", group);
     }
 
+    @Test
+    public void testInsert() throws Exception {
 
+    }
+
+    @Test
+    public void testSelectById() throws Exception {
+        group = groupService.selectById(3l);
+        logger.debug("@@@@@========@@@@@"+group.toString());
+    }
+
+    @Test
+    public void testSelectAll() throws Exception {
+
+    }
+
+    @Test
+    public void testCountAll() throws Exception {
+
+    }
+
+    @Test
+    public void testUpdateById() throws Exception {
+
+    }
+
+    @Test
+    public void testSelectByName() throws Exception {
+
+    }
+
+    @Test
+    public void testSelectAllSon() throws Exception {
+
+    }
+
+    @Test
+    public void testSelectImmediateSon() throws Exception {
+
+    }
+
+    @Test
+    public void testSelectAllParent() throws Exception {
+
+    }
+
+    @Test
+    public void testCountSon() throws Exception {
+
+    }
+
+    @Test
+    public void testIsHaveSon() throws Exception {
+
+    }
 }
+
